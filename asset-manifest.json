@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.19393e92.chunk.css",
-    "main.js": "/static/js/main.957bd007.chunk.js",
-    "main.js.map": "/static/js/main.957bd007.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.b41502e9.chunk.js": "/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/static/js/2.b41502e9.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.d3342bcc314982bd4ba3a1d20515c3ac.js": "/precache-manifest.d3342bcc314982bd4ba3a1d20515c3ac.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.19393e92.chunk.css.map": "/static/css/main.19393e92.chunk.css.map",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/orders-manager-frontend/static/css/main.19393e92.chunk.css",
+    "main.js": "/orders-manager-frontend/static/js/main.2ada46c7.chunk.js",
+    "main.js.map": "/orders-manager-frontend/static/js/main.2ada46c7.chunk.js.map",
+    "runtime~main.js": "/orders-manager-frontend/static/js/runtime~main.9f74f02a.js",
+    "runtime~main.js.map": "/orders-manager-frontend/static/js/runtime~main.9f74f02a.js.map",
+    "static/js/2.b41502e9.chunk.js": "/orders-manager-frontend/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/orders-manager-frontend/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/orders-manager-frontend/index.html",
+    "precache-manifest.881fe007e27439dacc27895c307dd7b2.js": "/orders-manager-frontend/precache-manifest.881fe007e27439dacc27895c307dd7b2.js",
+    "service-worker.js": "/orders-manager-frontend/service-worker.js",
+    "static/css/main.19393e92.chunk.css.map": "/orders-manager-frontend/static/css/main.19393e92.chunk.css.map",
+    "static/media/logo.svg": "/orders-manager-frontend/static/media/logo.5d5d9eef.svg"
   }
 }
