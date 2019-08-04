@@ -1,0 +1,122 @@
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menuFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.container {
+  margin-top: 41px;
+}
+
+#menu-toggle {
+  display: none;
+  padding-top: 10px;
+  font-size: 2.5rem;
+  background-color: #4a0808;
+  border: none;
+  color: white;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  padding: 5px 10px;
+  background-color: #4a0808;
+}
+
+.menu > li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+.menu > li:last-child {
+  margin-right: 0;
+}
+
+.menu a,
+.menu a:hover,
+.menu a:visited,
+.menu a:active {
+  color: white;
+  text-decoration: none;
+  transition-duration: 200ms;
+}
+
+.menu a:hover,
+.menu a:active {
+  color: #b1b1b1;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .container {
+    margin-top: 55px;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  #menu-toggle:focus {
+    outline: none;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0 0 0;
+  }
+
+  .menu > li {
+    margin-right: 0;
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  body.menu--opened {
+    overflow-y: hidden;
+  }
+
+  body.menu--opened .menu,
+  body.menu--fade-out .menu {
+    display: flex;
+    animation-duration: 0.2s;
+  }
+
+  body.menu--opened .menu {
+    animation-name: menuFadeIn;
+  }
+
+  body.menu--fade-out .menu {
+    animation-name: menuFadeOut;
+  }
+}
