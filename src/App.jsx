@@ -1,22 +1,11 @@
 import React from 'react'
 import './App.css'
+import Nav from './components/nav/Nav'
 
 function App() {
   return (
     <>
-      <nav className="nav" id="nav">
-        <button type="button" id="menu-toggle">
-          <i className="fas fa-bars" />
-        </button>
-        <ul className="menu">
-          <li>
-            <a href="/add_order">Добавить заказ</a>
-          </li>
-          <li>
-            <a href="/admin/app/">Админка</a>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <div className="container">
         <h1>
           <label htmlFor="order-id">
