@@ -1,0 +1,15 @@
+.labelled-input__input {
+  width: 150px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+.labelled-input__input[type='number'] {
+  width: 90px;
+}
+
+.labelled-input__input--invalid {
+  border: 2px solid red;
+}

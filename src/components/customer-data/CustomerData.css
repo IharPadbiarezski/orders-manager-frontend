@@ -13,21 +13,6 @@
   margin-bottom: 0;
 }
 
-.customer-data input {
-  width: 150px;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid black;
-}
-
-.input--error {
-  border: 2px solid red !important;
-}
-
-.customer-data input[type='number'] {
-  width: 90px;
-}
-
 .customer-data .comment-area {
   width: 150px;
   padding: 5px;
