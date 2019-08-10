@@ -44,6 +44,12 @@
       {
         "assert": "either"
       }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.jsx"]
+      }
     ]
   }
 }
