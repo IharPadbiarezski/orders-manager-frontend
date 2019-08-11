@@ -25,9 +25,6 @@
 .product .name-input {
   width: 350px;
   max-width: 95%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid black;
   background-color: #e6e6e6;
   color: black;
 }

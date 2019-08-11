@@ -3,6 +3,7 @@ import './App.css'
 import Nav from './components/nav/Nav'
 import CustomerData from './components/customer-data/CustomerData'
 import Product from './components/product/Product'
+import LabelledInput from './components/labelled-input/LabelledInput'
 
 function App() {
   return (
@@ -10,17 +11,12 @@ function App() {
       <Nav />
       <div className="container">
         <h1>
-          <label htmlFor="order-id">
-            Добавить заказ №
-            <input
-              type="number"
-              value="1307"
-              id="order-id"
-              className="order-id-input"
-            />
-          </label>
+          <LabelledInput
+            label="Добавить заказ №"
+            type="number"
+            inputClassName="order-id-input"
+          />
         </h1>
-
         <main>
           <section className="wrapper">
             <div className="products">

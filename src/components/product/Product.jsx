@@ -1,5 +1,6 @@
 import React from 'react'
 import './Product.css'
+import LabelledInput from '../labelled-input/LabelledInput'
 
 export default function Product() {
   return (
@@ -7,15 +8,7 @@ export default function Product() {
       <div className="product__close-wrapper">
         <i className="icon-close product__close" />
       </div>
-      <label htmlFor="name-input-1" className="name-label">
-        Имя товара
-        <input
-          type="text"
-          id="name-input-1"
-          className="name-input"
-          disabled=""
-        />
-      </label>
+      <LabelledInput label="Имя товара" inputClassName="name-input" disabled />
       <span className="product__type">Тип товара</span>
       <section className="product__buttons-wrapper">
         <button
@@ -69,43 +62,34 @@ export default function Product() {
         </button>
       </section>
       <div className="product__inputs">
-        <label htmlFor="purchase-price-input-1">
-          Закупочная цена товара
-          <input
-            type="text"
-            id="purchase-price-input-1"
-            className="purchase-price-input"
-            required=""
-          />
-        </label>
-        <label htmlFor="price-input-1">
-          Цена товара
-          <input
-            type="text"
-            id="price-input-1"
-            className="price-input"
-            required=""
-          />
-        </label>
-        <label htmlFor="number-input-1">
-          Количество товаров
-          <input
-            type="number"
-            id="number-input-1"
-            className="number-input"
-            value="1"
-          />
-        </label>
-      </div>
-      <label htmlFor="comment-area-1">
-        Комментарий
-        <textarea
-          id="comment-area-1"
-          cols="30"
-          rows="3"
-          className="comment-area"
+        <LabelledInput
+          label="Закупочная цена товара"
+          inputClassName="purchase-price-input"
+          required
         />
-      </label>
+        <LabelledInput
+          label="Цена товара"
+          inputClassName="price-input"
+          required
+        />
+        <LabelledInput
+          label="Количество товаров"
+          inputClassName="number-input"
+          defaultValue="1"
+          type="number"
+        />
+      </div>
+      <LabelledInput
+        label="Комментарий"
+        renderInput={() => (
+          <textarea
+            id="comment-area-1"
+            cols="30"
+            rows="3"
+            className="comment-area"
+          />
+        )}
+      />
     </section>
   )
 }
