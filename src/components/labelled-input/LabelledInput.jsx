@@ -8,7 +8,7 @@ const LabelledInput = ({
   type,
   defaultValue,
   renderInput,
-  labelText,
+  label,
   onChange,
   invalid,
   ...other
@@ -18,7 +18,7 @@ const LabelledInput = ({
   })
   return (
     <label>
-      {labelText}{' '}
+      {label}{' '}
       {renderInput ? (
         renderInput()
       ) : (
@@ -35,7 +35,7 @@ const LabelledInput = ({
 }
 
 LabelledInput.propTypes = {
-  labelText: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   inputClassName: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import LabelledInput from './LabelledInput'
 
 const commonProps = {
-  labelText: 'Test',
+  label: 'Test',
   onChange: action('changed'),
 }
 
@@ -55,4 +55,14 @@ storiesOf('LabelledInput', module)
     getComponent({
       invalid: true,
     })
+  )
+  .add(
+    'with node as label',
+    () =>
+      getComponent({
+        label: <h1>Test</h1>,
+      }),
+    {
+      notes: 'should render h1 tag',
+    }
   )
