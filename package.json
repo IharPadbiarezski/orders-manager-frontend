@@ -1,6 +1,11 @@
 {
   "name": "orders-manager-frontend",
   "homepage": "https://dimadk24.github.io/orders-manager-frontend",
+  "description": "app for managing orders in online store",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DimaDK24/orders-manager-frontend.git"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,5 +62,9 @@
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-prettier": "^1.1.1"
-  }
+  },
+  "keywords": [
+    "react"
+  ],
+  "license": "MIT"
 }
