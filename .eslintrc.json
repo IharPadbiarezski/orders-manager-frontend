@@ -7,7 +7,8 @@
     "eslint:recommended",
     "airbnb",
     "plugin:prettier/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:jest-formatting/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -51,11 +52,6 @@
         "devDependencies": ["**/*.stories.jsx"]
       }
     ],
-    "jest-formatting/padding-before-after-all-blocks": "error",
-    "jest-formatting/padding-before-after-each-blocks":"error",
-    "jest-formatting/padding-before-before-all-blocks": "error",
-    "jest-formatting/padding-before-before-each-blocks":"error",
-    "jest-formatting/padding-before-describe-blocks": "error",
-    "jest-formatting/padding-before-test-blocks": "error"
+    "jest-formatting/padding-around-expect-groups": "off"
   }
 }
