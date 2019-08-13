@@ -1,6 +1,6 @@
 import React from 'react'
 import './Product.css'
-import LabelledInput from '../labelled-input/LabelledInput'
+import LabelledInput from '../labelled-input'
 
 export default function Product() {
   return (

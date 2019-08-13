@@ -1,6 +1,6 @@
 import React from 'react'
 import './CustomerData.css'
-import LabelledInput from '../labelled-input/LabelledInput'
+import LabelledInput from '../labelled-input'
 
 function CustomerData() {
   return (
