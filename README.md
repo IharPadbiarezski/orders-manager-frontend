@@ -39,21 +39,23 @@ Have a look at other available scripts in `package.json`
 
 - start - launches project at local dev server with hot reloading (it's hot as hell)
 - build - makes production build of the project into `build` folder
-- test - launches jest test runner
+- test - launches [jest test runner](https://jestjs.io/)
 - eject - ejects project from create-react-app. Never run this script
-- format - reformat all js,jsx,json,css files according to prettier config
-- lint:js - runs eslint on js and jsx files
-- lint:css - runs stylelint on css,sass,scss files
+- format - reformat all js,jsx,json,css files according to [prettier](https://prettier.io/)
+config
+- lint:js - runs [eslint](https://eslint.org/) on js and jsx files
+- lint:css - runs [stylelint](https://stylelint.io) on css,sass,scss files
 - lint - runs lint:js and then lint:css
 - deploy - deploys project to github pages. This command runs `build` command before
-- storybook - launches storybook
-- build-storybook - builds storybook for deployment 
+- storybook - launches [storybook](https://storybook.js.org/)
+- build-storybook - builds [storybook](https://storybook.js.org/) for deployment 
 
 # Code style
 
-I use prettier to format code. Have a look at prettier config file.
+I use [prettier](https://prettier.io/) to format code. Have a look at prettier config file.
 You always can run `yarn format` to reformat code according to our guide.
-Most times, eslint or stylelint will report any code style violation.
+Most times, [eslint](https://eslint.org/) or [stylelint](https://stylelint.io)
+will report any code style violation.
 
 # Commit style
 
