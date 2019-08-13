@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
-import Nav from './components/nav'
-import CustomerData from './components/customer-data'
-import Product from './components/product'
-import LabelledInput from './components/labelled-input'
+import Nav from '../nav'
+import CustomerData from '../customer-data'
+import Product from '../product'
+import LabelledInput from '../labelled-input'
 
 function App() {
   return (
