@@ -1,4 +1,4 @@
-@import './product_parameters.css';
+@import 'productParameters.css';
 
 .product {
   display: flex;
