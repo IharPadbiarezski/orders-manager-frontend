@@ -1,7 +1,7 @@
 # orders-manager-frontend
 Frontend of app for managing orders in online store
 
-# Launching project for contributing
+## Launching project for contributing
 
 You'll need to have [NodeJS](https://nodejs.org/en/) installed.
 Verify it by running `node --version` in the console.
@@ -35,7 +35,7 @@ Launch app: `yarn start`
 
 Have a look at other available scripts in `package.json`
 
-# Package scripts
+## Package scripts
 
 - start - launches project at local dev server with hot reloading (it's hot as hell)
 - build - makes production build of the project into `build` folder
@@ -50,22 +50,22 @@ config
 - storybook - launches [storybook](https://storybook.js.org/)
 - build-storybook - builds [storybook](https://storybook.js.org/) for deployment 
 
-# Code style
+## Code style
 
 I use [prettier](https://prettier.io/) to format code. Have a look at prettier config file.
 You always can run `yarn format` to reformat code according to our guide.
 Most times, [eslint](https://eslint.org/) or [stylelint](https://stylelint.io)
 will report any code style violation.
 
-# Commit style
+## Commit style
 
 I use [conventionallcommits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
 Except one rule: subject line should not exceed 50 characters.
 It's required to make github render subject nicely.
 
-# IDE setup
+## IDE setup
 
-## WebStorm
+### WebStorm
 
 EditorConfig is supported out of the box.
 
@@ -101,7 +101,7 @@ according to our commit specification
 7. Ensure that `Perform code analysis` checkbox in the `Before commit` section is checked.
 It will run eslint or stylelint on changed files before commit
 
-## Visual Studio Code
+### Visual Studio Code
 
 Install [editoconfig plugin](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 to ensure correct configuration related to editorconfig 
@@ -149,12 +149,12 @@ or open an issue.
 If you have any suggestions, how this doc can be improved, feel free to contact [me](https://t.me/DimaDK24)
 or open PR or issue.
 
-# Git workflow
+## Git workflow
 
 We use [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
 Please read article above, if you're new to working with git in a team.
 
-# Code Style
+## Code Style
 
 Please read [our code style guide](CODESTYLE.md)
