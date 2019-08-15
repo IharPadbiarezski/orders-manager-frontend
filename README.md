@@ -154,3 +154,7 @@ or open PR or issue.
 We use [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
 Please read article above, if you're new to working with git in a team.
+
+# Code Style
+
+Please read [our code style guide](CODESTYLE.md)
