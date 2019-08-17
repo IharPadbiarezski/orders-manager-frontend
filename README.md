@@ -1,6 +1,8 @@
 # orders-manager-frontend
 Frontend of app for managing orders in online store
 
+[![CircleCI](https://circleci.com/gh/DimaDK24/orders-manager-frontend/tree/master.svg?style=svg)](https://circleci.com/gh/DimaDK24/orders-manager-frontend/tree/master)
+
 ## Launching project for contributing
 
 You'll need to have [NodeJS](https://nodejs.org/en/) installed.
