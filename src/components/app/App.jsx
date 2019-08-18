@@ -10,7 +10,7 @@ function App() {
     <>
       <Nav />
       <div className="container">
-        <h1>
+        <h1 className="order-id-wrapper">
           <LabelledInput
             label="Добавить заказ №"
             type="number"
@@ -18,7 +18,7 @@ function App() {
           />
         </h1>
         <main>
-          <section className="wrapper">
+          <section className="main-content-wrapper">
             <div className="products">
               <Product />
             </div>
