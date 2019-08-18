@@ -1,6 +1,7 @@
 import React from 'react'
 import './Product.css'
 import LabelledInput from '../labelled-input'
+import '../../assets/fontello/css/fontello.css'
 
 export default function Product() {
   return (
