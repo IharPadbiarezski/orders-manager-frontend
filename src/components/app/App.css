@@ -1,3 +1,22 @@
-@import '../../base.css';
 @import '../../addOrder.css';
 @import '../../assets/fontello/css/fontello.css';
+
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+
+  padding: 10px 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+}
+
+.container > h1 {
+  text-align: center;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
