@@ -3,3 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #efefef;
+  font-size: larger;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #402ecb;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+a:hover,
+a:active {
+  color: #b72935;
+}
