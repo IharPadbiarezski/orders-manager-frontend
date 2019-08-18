@@ -41,11 +41,6 @@ main {
   }
 }
 
-.address {
-  display: flex;
-  flex-direction: column;
-}
-
 .button {
   max-width: 95%;
   width: 300px;
