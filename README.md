@@ -52,6 +52,35 @@ config
 - storybook - launches [storybook](https://storybook.js.org/)
 - build-storybook - builds [storybook](https://storybook.js.org/) for deployment 
 
+## Git configuration for end of lines
+
+Isn't as easy as it should be if you work on Windows.
+In that case you need to take some additional steps
+to ensure you have correct line endings locally.
+By default git on windows changes lf line breaks to crlf on checkout.
+And our linter reports this as error. So we need to reconfigure git.
+
+Go to the repository. Run:
+```
+git config --local core.eol lf
+git config --local core.autocrlf false
+```
+
+This will tell git to use lf line endings
+and don't perform any changes to line breaks on checkin or checkout.
+
+Additional information about these settings are available here:
+[git docs](https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf)
+[stackoverflow 1](https://stackoverflow.com/q/9976986/)
+[stackoverflow 2](https://stackoverflow.com/q/1249932/)
+
+Now we need to apply this settings to our current working tree. To do it run:
+`git rm --cached -r . && git reset --hard`.
+This command cleans working tree and then load working tree from repository index.
+This applies configs, we set above.
+Now run `yarn lint` to ensure that everything works. You shouldn't get any errors.
+
+
 ## Code style
 
 I use [prettier](https://prettier.io/) to format code. Have a look at prettier config file.
