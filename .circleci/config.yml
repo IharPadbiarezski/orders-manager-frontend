@@ -40,10 +40,12 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: |
-          git config user.email "$DEPLOY_COMMIT_EMAIL"
-          git config user.name "$DEPLOY_COMMIT_USERNAME"
-          yarn deploy
+      - run:
+          name: Deploy dev instance
+          command: |
+            git config user.email "$DEPLOY_COMMIT_EMAIL"
+            git config user.name "$DEPLOY_COMMIT_USERNAME"
+            yarn deploy
 workflows:
   version: 2
   lint_test_deploy:
