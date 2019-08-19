@@ -34,9 +34,16 @@ jobs:
       - attach_workspace:
             at: .
       - run: yarn test
+  deploy:
+    executor: ci-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: yarn deploy
 workflows:
   version: 2
-  lint_and_test:
+  lint_test_deploy:
     jobs:
       - install-dependencies
       - lint:
@@ -45,3 +52,7 @@ workflows:
       - test:
           requires:
             - install-dependencies
+      - deploy:
+          requires:
+            - lint
+            - test
