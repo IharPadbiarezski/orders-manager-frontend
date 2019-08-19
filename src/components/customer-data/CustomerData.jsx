@@ -1,11 +1,21 @@
 import React from 'react'
 import './CustomerData.css'
 import LabelledInput from '../labelled-input'
+import DatePiker from './day-picker'
+import CustomDayPicker from './custom-date-picker'
 
 function CustomerData() {
   return (
     <div className="customer-data">
-      <LabelledInput label="Дата и время заказа" />
+      <CustomDayPicker label="Дата и время заказа" />
+      <DatePiker label="Дата доставки" />
+      {/* <DayPickerInput
+        showTimeSelect
+        timeFormat="HH:mm"
+        timeIntervals={15}
+        dateFormat="MMMM d, yyyy h:mm aa"
+        timeCaption="time"
+      /> */}
       <LabelledInput label="Дата доставки" />
       <LabelledInput label="Время доставки" />
       <LabelledInput label="Телефон" />
