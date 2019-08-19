@@ -34,9 +34,24 @@ jobs:
       - attach_workspace:
             at: .
       - run: yarn test
+  deploy:
+    executor: ci-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - add_ssh_keys:
+          fingerpints:
+            - "3a:a2:25:c4:65:34:db:a5:f6:45:14:b4:23:78:5b:38"
+      - run:
+          name: Deploy dev instance
+          command: |
+            git config user.email "$DEPLOY_COMMIT_EMAIL"
+            git config user.name "$DEPLOY_COMMIT_USERNAME"
+            yarn deploy
 workflows:
   version: 2
-  lint_and_test:
+  build:
     jobs:
       - install-dependencies
       - lint:
@@ -45,3 +60,10 @@ workflows:
       - test:
           requires:
             - install-dependencies
+      - deploy:
+          requires:
+            - lint
+            - test
+          filters:
+            branches:
+              only: master
