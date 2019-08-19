@@ -51,7 +51,7 @@ jobs:
             yarn deploy
 workflows:
   version: 2
-  lint_test_deploy:
+  build:
     jobs:
       - install-dependencies
       - lint:
