@@ -40,6 +40,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - add_ssh_keys:
+          fingerpints:
+            - "3a:a2:25:c4:65:34:db:a5:f6:45:14:b4:23:78:5b:38"
       - run:
           name: Deploy dev instance
           command: |
