@@ -13,39 +13,37 @@ const DatePickerInput = ({
   keepFocus,
   format,
   defaultValue,
-  label,
   onChange,
   placeholder,
   locale,
+  overlayComponent,
 }) => {
   return (
-    <label>
-      {label}{' '}
-      <DayPickerInput
-        formatDate={formatDate}
-        parseDate={parseDate}
-        keepFocus={keepFocus}
-        format={format}
-        value={defaultValue}
-        placeholder={placeholder}
-        dayPickerProps={{
-          locale,
-          localeUtils: MomentLocaleUtils,
-        }}
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </label>
+    <DayPickerInput
+      formatDate={formatDate}
+      parseDate={parseDate}
+      keepFocus={keepFocus}
+      format={format}
+      value={defaultValue}
+      placeholder={placeholder}
+      dayPickerProps={{
+        locale,
+        localeUtils: MomentLocaleUtils,
+      }}
+      overlayComponent={overlayComponent}
+      onChange={(e) => onChange(e.target.value)}
+    />
   )
 }
 
 DatePickerInput.propTypes = {
-  label: PropTypes.node.isRequired,
   defaultValue: PropTypes.string,
   onChange: PropTypes.func,
   keepFocus: PropTypes.bool,
   format: PropTypes.string,
   placeholder: PropTypes.string,
   locale: PropTypes.string,
+  overlayComponent: PropTypes.func.isRequired,
 }
 
 DatePickerInput.defaultProps = {
