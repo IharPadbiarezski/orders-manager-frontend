@@ -2,7 +2,7 @@ import React from 'react'
 import './CustomerData.css'
 import { formatDate } from 'react-day-picker/moment'
 import LabelledInput from '../labelled-input'
-import DatePickerInput from './day-picker'
+import DatePickerInput from '../date-picker-input'
 import CustomDayPicker from './custom-date-picker'
 
 function CustomerData() {

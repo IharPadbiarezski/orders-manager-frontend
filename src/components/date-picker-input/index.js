@@ -1,3 +1,3 @@
-import DayPicker from './DayPicker'
+import DatePickerInput from './DatePickerInput'
 
-export default DayPicker
+export default DatePickerInput

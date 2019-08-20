@@ -7,7 +7,7 @@ import MomentLocaleUtils, {
 import 'moment/locale/ru'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
-import './DayPicker.css'
+import './DatePickerInput.css'
 
 const DatePickerInput = ({
   keepFocus,
