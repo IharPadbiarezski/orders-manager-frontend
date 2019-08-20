@@ -9,13 +9,14 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 import './DayPicker.css'
 
-const DatePicker = ({
-  type,
+const DatePickerInput = ({
+  keepFocus,
+  format,
   defaultValue,
-  renderInput,
   label,
   onChange,
-  invalid,
+  placeholder,
+  locale,
 }) => {
   return (
     <label>
@@ -23,34 +24,37 @@ const DatePicker = ({
       <DayPickerInput
         formatDate={formatDate}
         parseDate={parseDate}
-        keepFocus={false}
-        format="LL"
-        placeholder={`${formatDate(new Date(), 'LL', 'ru')}`}
-        value={`${formatDate(new Date(), 'LL', 'ru')}`}
+        keepFocus={keepFocus}
+        format={format}
+        value={defaultValue}
+        placeholder={placeholder}
         dayPickerProps={{
-          locale: 'ru',
+          locale,
           localeUtils: MomentLocaleUtils,
         }}
+        onChange={(e) => onChange(e.target.value)}
       />
     </label>
   )
 }
 
-DatePicker.propTypes = {
+DatePickerInput.propTypes = {
   label: PropTypes.node.isRequired,
-  type: PropTypes.string,
   defaultValue: PropTypes.string,
-  renderInput: PropTypes.func,
   onChange: PropTypes.func,
-  invalid: PropTypes.bool,
+  keepFocus: PropTypes.bool,
+  format: PropTypes.string,
+  placeholder: PropTypes.string,
+  locale: PropTypes.string,
 }
 
-DatePicker.defaultProps = {
-  type: 'text',
+DatePickerInput.defaultProps = {
+  keepFocus: false,
+  format: '',
+  placeholder: '',
   defaultValue: '',
-  renderInput: null,
   onChange: () => {},
-  invalid: false,
+  locale: '',
 }
 
-export default DatePicker
+export default DatePickerInput

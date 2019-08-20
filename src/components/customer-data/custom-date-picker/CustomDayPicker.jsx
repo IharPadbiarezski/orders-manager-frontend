@@ -10,7 +10,7 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 import './CustomDayPicker.css'
 
-function CustomOverlay({ classNames, selectedDay, children, ...props }) {
+const CustomOverlay = ({ classNames, selectedDay, children, ...props }) => {
   return (
     <div className={classNames.overlayWrapper} {...props}>
       <div className={classNames.overlay}>
@@ -30,9 +30,28 @@ function CustomOverlay({ classNames, selectedDay, children, ...props }) {
 
 CustomOverlay.propTypes = {
   children: PropTypes.node.isRequired,
+  classNames: PropTypes.string.isRequired,
+  selectedDay: PropTypes.instanceOf(Date).isRequired,
 }
 
-function CustomDayPicker(props) {
+// CustomOverlay.propTypes = {
+//   label: PropTypes.node.isRequired,
+//   type: PropTypes.string,
+//   defaultValue: PropTypes.string,
+//   renderInput: PropTypes.func,
+//   onChange: PropTypes.func,
+//   invalid: PropTypes.bool,
+// }
+
+// CustomOverlay.defaultProps = {
+//   // type: 'text',
+//   // defaultValue: '',
+//   // renderInput: null,
+//   onChange: () => {},
+//   // invalid: false,
+// }
+
+const CustomDayPicker = (props) => {
   const { label } = props
   return (
     <label>
@@ -51,6 +70,10 @@ function CustomDayPicker(props) {
       />
     </label>
   )
+}
+
+CustomDayPicker.propTypes = {
+  label: PropTypes.string.isRequired,
 }
 
 export default CustomDayPicker
