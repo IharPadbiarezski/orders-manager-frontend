@@ -1,14 +1,17 @@
 import React from 'react'
 import './CustomerData.css'
 import LabelledInput from '../labelled-input'
-import OrderDateInput from '../order-date-input'
-import DeliveryDateInput from '../delivery-date-input'
+import LabelledDateTimeInput from '../labelled-date-time-input'
 
 function CustomerData() {
   return (
     <div className="customer-data">
-      <OrderDateInput label="Дата и время заказа" />
-      <DeliveryDateInput label="Дата доставки" />
+      <LabelledDateTimeInput label="Дата и время заказа" timeFormat="HH:mm" />
+      <LabelledDateTimeInput
+        label="Дата доставки"
+        value={new Date()}
+        timeFormat={false}
+      />
       <LabelledInput label="Время доставки" />
       <LabelledInput label="Телефон" />
       <LabelledInput label="Доп. телефон" />
