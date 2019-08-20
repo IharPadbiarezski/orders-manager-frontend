@@ -5,8 +5,8 @@ import MomentLocaleUtils, {
   parseDate,
 } from 'react-day-picker/moment'
 import 'moment/locale/ru'
-import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
+import DayPickerInput from 'react-day-picker/DayPickerInput'
 import './DatePickerInput.css'
 
 const DatePickerInput = ({

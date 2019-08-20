@@ -4,12 +4,15 @@ import { formatDate } from 'react-day-picker/moment'
 import 'moment/locale/ru'
 import 'react-day-picker/lib/style.css'
 import DatePickerInput from '../date-picker-input'
+import CustomTimePicker from '../custom-time-picker'
+import './OrderDateInput.css'
 
 const CustomOverlay = ({ classNames, selectedDay, children, ...props }) => {
   return (
     <div className={classNames.overlayWrapper} {...props}>
       <div className={classNames.overlay}>
-        <h3>Выберите время заказа!</h3>
+        <h3>Выберите время и дату!</h3>
+        <CustomTimePicker />
         {children}
       </div>
     </div>
@@ -30,22 +33,30 @@ CustomOverlay.defaultProps = {
   selectedDay: new Date(),
 }
 
-const DeliveryDateInput = ({ label }) => {
+const OrderDateInput = ({ label }) => {
+  const state = {
+    time: '00:00',
+  }
   return (
     <label>
       {label}{' '}
       <DatePickerInput
-        format="DD.MM.YYYY"
-        defaultValue={`${formatDate(new Date(), 'DD.MM.YYYY', 'ru')}`}
+        format={`DD.MM.YYYY ${state.time}`}
+        defaultValue={`${formatDate(
+          new Date(),
+          `DD.MM.YYYY ${state.time}`,
+          'ru'
+        )}`}
         locale="ru"
         overlayComponent={CustomOverlay}
+        onChange={(e) => e.target.value}
       />
     </label>
   )
 }
 
-DeliveryDateInput.propTypes = {
+OrderDateInput.propTypes = {
   label: PropTypes.string.isRequired,
 }
 
-export default DeliveryDateInput
+export default OrderDateInput
