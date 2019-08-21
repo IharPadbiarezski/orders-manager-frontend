@@ -6,12 +6,8 @@ import LabelledDateTimeInput from '../labelled-date-time-input'
 function CustomerData() {
   return (
     <div className="customer-data">
-      <LabelledDateTimeInput label="Дата и время заказа" timeFormat="HH:mm" />
-      <LabelledDateTimeInput
-        label="Дата доставки"
-        value={new Date()}
-        timeFormat={false}
-      />
+      <LabelledDateTimeInput label="Дата заказа" />
+      <LabelledDateTimeInput label="Дата доставки" />
       <LabelledInput label="Время доставки" />
       <LabelledInput label="Телефон" />
       <LabelledInput label="Доп. телефон" />

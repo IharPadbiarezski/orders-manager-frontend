@@ -21,8 +21,8 @@ LabelledDateTimeInput.propTypes = {
 }
 
 LabelledDateTimeInput.defaultProps = {
-  value: moment().startOf('day'),
-  timeFormat: true,
+  value: moment(),
+  timeFormat: false,
 }
 
 export default LabelledDateTimeInput
