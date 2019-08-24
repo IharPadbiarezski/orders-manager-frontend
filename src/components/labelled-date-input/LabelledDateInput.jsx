@@ -12,7 +12,12 @@ const LabelledDateInput = ({ label, ...other }) => (
     label={label}
     labelClassName="labelled-date-input__label"
     renderInput={() => (
-      <DateTime timeFormat={false} defaultValue={moment()} locale="ru" />
+      <DateTime
+        timeFormat={false}
+        defaultValue={moment()}
+        inputProps={{ className: 'labelled-date-input__input' }}
+        locale="ru"
+      />
     )}
     {...other}
   />
