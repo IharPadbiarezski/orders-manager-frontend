@@ -6,16 +6,8 @@ import LabelledDateInput from '../labelled-date-input'
 function CustomerData() {
   return (
     <div className="customer-data">
-      <LabelledInput
-        label="Дата заказа"
-        labelClassName="customer__label--flex"
-        renderInput={LabelledDateInput}
-      />
-      <LabelledInput
-        label="Дата доставки"
-        labelClassName="customer__label--flex"
-        renderInput={LabelledDateInput}
-      />
+      <LabelledDateInput label="Дата заказа" />
+      <LabelledDateInput label="Дата доставки" />
       <LabelledInput label="Время доставки" />
       <LabelledInput label="Телефон" />
       <LabelledInput label="Доп. телефон" />

@@ -21,10 +21,6 @@
   vertical-align: top;
 }
 
-.customer__label--flex {
-  display: flex;
-}
-
 @media (min-width: 1121px) {
   .customer-data {
     position: fixed;

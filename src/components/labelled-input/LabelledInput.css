@@ -13,3 +13,7 @@
 .labelled-input__input--invalid {
   border: 2px solid red;
 }
+
+.labelled-date-input__label {
+  display: flex;
+}
