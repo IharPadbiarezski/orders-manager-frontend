@@ -4,6 +4,7 @@ import Nav from '../nav'
 import CustomerData from '../customer-data'
 import Product from '../product'
 import LabelledInput from '../labelled-input'
+import Button from '../button'
 
 function App() {
   return (
@@ -22,20 +23,8 @@ function App() {
             <div className="products">
               <Product />
             </div>
-            <button
-              type="button"
-              id="add-product"
-              className="button btn-add-product"
-            >
-              +
-            </button>
-            <button
-              type="button"
-              id="save-order"
-              className="button btn-save-order"
-            >
-              Сохранить заказ
-            </button>
+            <Button className="btn-add-product">+</Button>
+            <Button className="btn-save-order">Сохранить заказ</Button>
           </section>
           <aside>
             <CustomerData />
