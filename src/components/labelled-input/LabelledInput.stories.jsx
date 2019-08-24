@@ -18,6 +18,7 @@ const getComponent = (props) => {
 
 storiesOf('LabelledInput', module)
   .add('simple', () => getComponent())
+  .add('centered', () => getComponent({ centered: true }))
   .add('with default value', () =>
     getComponent({ defaultValue: 'Super test default value' })
   )

@@ -1,3 +1,13 @@
+.labelled-input__label {
+  width: fit-content;
+  max-width: 100%;
+  display: block;
+}
+
+.labelled-input__label--centered {
+  margin: 0 auto;
+}
+
 .labelled-input__input {
   width: 150px;
   padding: 5px;
