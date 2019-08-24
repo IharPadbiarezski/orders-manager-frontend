@@ -2,6 +2,7 @@ import React from 'react'
 import './Product.css'
 import LabelledInput from '../labelled-input'
 import '../../assets/fontello/css/fontello.css'
+import ProductTypeButton from './product-type-button'
 
 export default function Product() {
   return (
@@ -12,55 +13,13 @@ export default function Product() {
       <LabelledInput label="Имя товара" inputClassName="name-input" disabled />
       <span className="product__type">Тип товара</span>
       <section className="product__buttons-wrapper">
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="1"
-        >
-          одеяло
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="2"
-        >
-          подушка
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="3"
-        >
-          постельное белье
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="4"
-        >
-          простыня на резинке
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="5"
-        >
-          наматрасник
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="6"
-        >
-          плед
-        </button>
-        <button
-          type="button"
-          className="button product__choose-type-button"
-          value="7"
-        >
-          полотенце
-        </button>
+        <ProductTypeButton>одеяло</ProductTypeButton>
+        <ProductTypeButton>подушка</ProductTypeButton>
+        <ProductTypeButton>постельное белье</ProductTypeButton>
+        <ProductTypeButton>простыня на резинке</ProductTypeButton>
+        <ProductTypeButton>наматрасник</ProductTypeButton>
+        <ProductTypeButton>плед</ProductTypeButton>
+        <ProductTypeButton>полотенце</ProductTypeButton>
       </section>
       <div className="product__inputs">
         <LabelledInput
