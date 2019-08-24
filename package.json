@@ -14,10 +14,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-datetime": "^2.16.3",
-    "react-day-picker": "^7.3.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "react-time-picker": "^3.7.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
