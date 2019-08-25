@@ -9,6 +9,7 @@ const LabelledInput = ({
   defaultValue,
   renderInput,
   label,
+  labelClassName,
   onChange,
   invalid,
   ...other
@@ -17,7 +18,7 @@ const LabelledInput = ({
     'labelled-input__input--invalid': invalid,
   })
   return (
-    <label>
+    <label className={labelClassName}>
       {label}{' '}
       {renderInput ? (
         renderInput()
@@ -36,6 +37,7 @@ const LabelledInput = ({
 
 LabelledInput.propTypes = {
   label: PropTypes.node.isRequired,
+  labelClassName: PropTypes.string,
   inputClassName: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,
@@ -46,6 +48,7 @@ LabelledInput.propTypes = {
 
 LabelledInput.defaultProps = {
   type: 'text',
+  labelClassName: '',
   inputClassName: '',
   defaultValue: '',
   renderInput: null,

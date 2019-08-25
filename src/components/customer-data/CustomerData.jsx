@@ -1,12 +1,13 @@
 import React from 'react'
 import './CustomerData.css'
 import LabelledInput from '../labelled-input'
+import LabelledDateInput from '../labelled-date-input'
 
 function CustomerData() {
   return (
     <div className="customer-data">
-      <LabelledInput label="Дата и время заказа" />
-      <LabelledInput label="Дата доставки" />
+      <LabelledDateInput label="Дата заказа" />
+      <LabelledDateInput label="Дата доставки" />
       <LabelledInput label="Время доставки" />
       <LabelledInput label="Телефон" />
       <LabelledInput label="Доп. телефон" />
