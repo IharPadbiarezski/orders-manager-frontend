@@ -9,7 +9,12 @@ export default function Product() {
       <div className="product__close-wrapper">
         <i className="icon-close product__close" />
       </div>
-      <LabelledInput label="Имя товара" inputClassName="name-input" disabled />
+      <LabelledInput
+        label="Имя товара"
+        inputClassName="name-input"
+        disabled
+        centered
+      />
       <span className="product__type">Тип товара</span>
       <section className="product__buttons-wrapper">
         <button
@@ -67,17 +72,20 @@ export default function Product() {
           label="Закупочная цена товара"
           inputClassName="purchase-price-input"
           required
+          centered
         />
         <LabelledInput
           label="Цена товара"
           inputClassName="price-input"
           required
+          centered
         />
         <LabelledInput
           label="Количество товаров"
           inputClassName="number-input"
           defaultValue="1"
           type="number"
+          centered
         />
       </div>
       <LabelledInput
@@ -90,6 +98,7 @@ export default function Product() {
             className="comment-area"
           />
         )}
+        centered
       />
     </section>
   )

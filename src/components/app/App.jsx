@@ -15,6 +15,7 @@ function App() {
             label="Добавить заказ №"
             type="number"
             inputClassName="order-id-input"
+            centered
           />
         </h1>
         <main>

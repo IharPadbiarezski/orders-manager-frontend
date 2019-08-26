@@ -12,13 +12,21 @@ const LabelledInput = ({
   labelClassName,
   onChange,
   invalid,
+  centered,
   ...other
 }) => {
+  const labelClasses = classNames(
+    'labelled-input__label',
+    {
+      'labelled-input__label--centered': centered,
+    },
+    labelClassName
+  )
   const inputClasses = classNames('labelled-input__input', inputClassName, {
     'labelled-input__input--invalid': invalid,
   })
   return (
-    <label className={labelClassName}>
+    <label className={labelClasses}>
       {label}{' '}
       {renderInput ? (
         renderInput()
@@ -44,6 +52,7 @@ LabelledInput.propTypes = {
   renderInput: PropTypes.func,
   onChange: PropTypes.func,
   invalid: PropTypes.bool,
+  centered: PropTypes.bool,
 }
 
 LabelledInput.defaultProps = {
@@ -54,6 +63,7 @@ LabelledInput.defaultProps = {
   renderInput: null,
   onChange: () => {},
   invalid: false,
+  centered: false,
 }
 
 export default LabelledInput
