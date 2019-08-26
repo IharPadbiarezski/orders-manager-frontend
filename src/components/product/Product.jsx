@@ -3,6 +3,8 @@ import './Product.css'
 import LabelledInput from '../labelled-input'
 import '../../assets/fontello/css/fontello.css'
 
+import ProductParameter from '../product-parameter'
+
 export default function Product() {
   return (
     <section className="product" data-product-type-id="0">
@@ -11,6 +13,16 @@ export default function Product() {
       </div>
       <LabelledInput label="Имя товара" inputClassName="name-input" disabled />
       <span className="product__type">Тип товара</span>
+      <ProductParameter
+        label="Hi guys"
+        text="Наполнитель"
+        options={[
+          { name: 'наполнитель', value: 'пух-перо' },
+          { name: 'наполнитель', value: 'пух' },
+          { name: 'наполнитель', value: 'перо' },
+          { name: 'наполнитель', value: 'шерсть' },
+        ]}
+      />
       <section className="product__buttons-wrapper">
         <button
           type="button"
