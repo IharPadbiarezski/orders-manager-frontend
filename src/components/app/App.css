@@ -61,23 +61,11 @@ main {
   }
 }
 
-.button {
-  max-width: 95%;
-  width: 300px;
-  padding: 15px 0;
+.btn-add-product,
+.btn-save-order {
   margin-top: 10px;
   border-radius: 10px;
   border: 1px solid black;
-
-  background-color: white;
-  cursor: pointer;
-
-  transition-duration: 300ms;
-}
-
-.button:hover,
-.button:active {
-  background-color: #c3cbea;
 }
 
 .btn-add-product {
@@ -93,5 +81,14 @@ main {
 }
 
 .btn-save-order {
+  width: 300px;
+  max-width: 95%;
+  padding: 15px 0;
   font-size: large;
+  background-color: white;
+}
+
+.btn-save-order:hover,
+.btn-save-order:active {
+  background-color: #c3cbea;
 }

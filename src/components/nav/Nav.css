@@ -25,26 +25,26 @@
   display: flex;
   color: white;
   font-size: 1.7rem;
+  background-color: #4a0808;
+  padding: 5px 0;
 }
 
 .container {
   margin-top: 41px;
 }
 
-#menu-toggle {
+.btn-menu-toggle {
   display: none;
-  padding-top: 10px;
   font-size: 2.5rem;
-  background-color: #4a0808;
   border: none;
   color: white;
+  background: transparent;
 }
 
 .menu {
   width: 100%;
   display: flex;
-  padding: 5px 10px;
-  background-color: #4a0808;
+  padding: 0 10px;
 }
 
 .menu > li {
@@ -79,11 +79,11 @@
     margin-top: 55px;
   }
 
-  #menu-toggle {
+  .btn-menu-toggle {
     display: block;
   }
 
-  #menu-toggle:focus {
+  .btn-menu-toggle:focus {
     outline: none;
   }
 
