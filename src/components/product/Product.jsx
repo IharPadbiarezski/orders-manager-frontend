@@ -3,12 +3,15 @@ import './Product.css'
 import LabelledInput from '../labelled-input'
 import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
+import Button from '../button'
 
 export default function Product() {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
-        <i className="icon-close product__close" />
+        <Button className="product__close-button">
+          <i className="icon-close" />
+        </Button>
       </div>
       <LabelledInput
         label="Имя товара"
