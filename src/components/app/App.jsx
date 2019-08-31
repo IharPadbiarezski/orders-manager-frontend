@@ -1,38 +1,17 @@
 import React from 'react'
-import './App.css'
-import Nav from '../nav'
-import CustomerData from '../customer-data'
-import Product from '../product'
-import LabelledInput from '../labelled-input'
-import Button from '../button'
+import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore } from 'redux'
+import app from '../main-content/main-content_reducers'
+import MainContent from '../main-content/MainContent'
+
+const store = createStore(app, composeWithDevTools())
 
 function App() {
   return (
-    <>
-      <Nav />
-      <div className="container">
-        <h1 className="order-id-wrapper">
-          <LabelledInput
-            label="Добавить заказ №"
-            type="number"
-            inputClassName="order-id-input"
-            centered
-          />
-        </h1>
-        <main>
-          <section className="main-content-wrapper">
-            <div className="products">
-              <Product />
-            </div>
-            <Button className="btn-add-product">+</Button>
-            <Button className="btn-save-order">Сохранить заказ</Button>
-          </section>
-          <aside>
-            <CustomerData />
-          </aside>
-        </main>
-      </div>
-    </>
+    <Provider store={store}>
+      <MainContent />
+    </Provider>
   )
 }
 
