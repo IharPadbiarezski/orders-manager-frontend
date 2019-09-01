@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions'
+import { ADD_PRODUCT, REMOVE_PRODUCT } from '../actions'
 
 const initialState = [{ id: 1 }]
 
