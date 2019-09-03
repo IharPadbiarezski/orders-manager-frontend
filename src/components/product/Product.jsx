@@ -1,14 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Product.css'
 import LabelledInput from '../labelled-input'
 import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
+import Button from '../button'
 
-export default function Product() {
+function Product({ onRemove }) {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
-        <i className="icon-close product__close" />
+        <Button className="product__close-button" onClick={onRemove}>
+          <i className="icon-close" />
+        </Button>
       </div>
       <LabelledInput
         label="Имя товара"
@@ -62,3 +66,13 @@ export default function Product() {
     </section>
   )
 }
+
+Product.propTypes = {
+  onRemove: PropTypes.func,
+}
+
+Product.defaultProps = {
+  onRemove: () => {},
+}
+
+export default Product

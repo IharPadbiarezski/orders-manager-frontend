@@ -15,11 +15,13 @@
 
 .product__close-wrapper {
   text-align: right;
-  font-size: 2em;
 }
 
-.product__close::before {
+.product__close-button {
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 2em;
 }
 
 .product .name-input {
