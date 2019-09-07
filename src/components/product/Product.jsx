@@ -21,7 +21,7 @@ function Product({ onRemove, productTypes, onSelectProductType }) {
         centered
       />
       <span className="product__type">Тип товара</span>
-      <section className="product__buttons-wrapper">
+      <section className="product__product-types">
         {productTypes.map(({ id, value }) => (
           <ProductTypeButton
             key={id}
@@ -31,7 +31,7 @@ function Product({ onRemove, productTypes, onSelectProductType }) {
           </ProductTypeButton>
         ))}
       </section>
-      <div className="product__inputs">
+      <div className="product__parameters">
         <LabelledInput
           label="Закупочная цена товара"
           inputClassName="purchase-price-input"
