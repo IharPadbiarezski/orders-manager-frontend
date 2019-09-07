@@ -6,11 +6,11 @@ import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
 
-function Product({ onRemove }) {
+function Product({ onRemove, productTypes, onSelectProductType }) {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
-        <Button className="product__close-button" onClick={onRemove}>
+        <Button className="product__close-button" onClick={() => onRemove()}>
           <i className="icon-close" />
         </Button>
       </div>
@@ -21,16 +21,17 @@ function Product({ onRemove }) {
         centered
       />
       <span className="product__type">Тип товара</span>
-      <section className="product__buttons-wrapper">
-        <ProductTypeButton>одеяло</ProductTypeButton>
-        <ProductTypeButton>подушка</ProductTypeButton>
-        <ProductTypeButton>постельное белье</ProductTypeButton>
-        <ProductTypeButton>простыня на резинке</ProductTypeButton>
-        <ProductTypeButton>наматрасник</ProductTypeButton>
-        <ProductTypeButton>плед</ProductTypeButton>
-        <ProductTypeButton>полотенце</ProductTypeButton>
+      <section className="product__product-types">
+        {productTypes.map(({ id, value }) => (
+          <ProductTypeButton
+            key={id}
+            onClick={() => onSelectProductType({ id, value })}
+          >
+            {value}
+          </ProductTypeButton>
+        ))}
       </section>
-      <div className="product__inputs">
+      <div className="product__parameters">
         <LabelledInput
           label="Закупочная цена товара"
           inputClassName="purchase-price-input"
@@ -69,10 +70,19 @@ function Product({ onRemove }) {
 
 Product.propTypes = {
   onRemove: PropTypes.func,
+  productTypes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.required,
+      value: PropTypes.string.required,
+    })
+  ),
+  onSelectProductType: PropTypes.func,
 }
 
 Product.defaultProps = {
   onRemove: () => {},
+  productTypes: [],
+  onSelectProductType: () => {},
 }
 
 export default Product

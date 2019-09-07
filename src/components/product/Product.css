@@ -33,9 +33,10 @@
 
 .product__type {
   margin-top: 10px;
+  text-align: center;
 }
 
-.product__inputs > label {
+.product__parameters > label {
   margin-bottom: 15px;
 }
 
@@ -51,8 +52,9 @@
   vertical-align: top;
 }
 
-.product__buttons-wrapper {
+.product__product-types {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .product input[type='number'] {
