@@ -9,6 +9,16 @@ import Button from '../button'
 import CustomerData from '../customer-data'
 import { addProduct, removeProduct } from '../../actions'
 
+const productTypes = [
+  { id: 1, value: 'одеяло' },
+  { id: 2, value: 'подушка' },
+  { id: 3, value: 'постельное бельё' },
+  { id: 4, value: 'простыня на резинке' },
+  { id: 5, value: 'наматрасник' },
+  { id: 6, value: 'плед' },
+  { id: 7, value: 'полотенце' },
+]
+
 function App({ products, onAddProduct, onRemoveProduct }) {
   return (
     <>
@@ -26,7 +36,11 @@ function App({ products, onAddProduct, onRemoveProduct }) {
           <section className="main-content-wrapper">
             <div className="products">
               {products.map(({ id }) => (
-                <Product onRemove={() => onRemoveProduct(id)} key={id} />
+                <Product
+                  key={id}
+                  onRemove={() => onRemoveProduct(id)}
+                  productTypes={productTypes}
+                />
               ))}
             </div>
             <Button className="btn-add-product" onClick={() => onAddProduct()}>

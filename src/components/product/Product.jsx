@@ -6,7 +6,7 @@ import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
 
-function Product({ onRemove }) {
+function Product({ onRemove, productTypes, onSelectProductType }) {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
@@ -22,13 +22,14 @@ function Product({ onRemove }) {
       />
       <span className="product__type">Тип товара</span>
       <section className="product__buttons-wrapper">
-        <ProductTypeButton>одеяло</ProductTypeButton>
-        <ProductTypeButton>подушка</ProductTypeButton>
-        <ProductTypeButton>постельное белье</ProductTypeButton>
-        <ProductTypeButton>простыня на резинке</ProductTypeButton>
-        <ProductTypeButton>наматрасник</ProductTypeButton>
-        <ProductTypeButton>плед</ProductTypeButton>
-        <ProductTypeButton>полотенце</ProductTypeButton>
+        {productTypes.map(({ id, value }) => (
+          <ProductTypeButton
+            key={id}
+            onClick={() => onSelectProductType({ id, value })}
+          >
+            {value}
+          </ProductTypeButton>
+        ))}
       </section>
       <div className="product__inputs">
         <LabelledInput
@@ -69,10 +70,19 @@ function Product({ onRemove }) {
 
 Product.propTypes = {
   onRemove: PropTypes.func,
+  productTypes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.required,
+      value: PropTypes.string.required,
+    })
+  ),
+  onSelectProductType: PropTypes.func,
 }
 
 Product.defaultProps = {
   onRemove: () => {},
+  productTypes: [],
+  onSelectProductType: () => {},
 }
 
 export default Product
