@@ -10,7 +10,7 @@ function Product({ onRemove }) {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
-        <Button className="product__close-button" onClick={onRemove}>
+        <Button className="product__close-button" onClick={() => onRemove()}>
           <i className="icon-close" />
         </Button>
       </div>
