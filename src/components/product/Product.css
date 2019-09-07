@@ -33,6 +33,7 @@
 
 .product__type {
   margin-top: 10px;
+  text-align: center;
 }
 
 .product__inputs > label {
@@ -53,6 +54,7 @@
 
 .product__buttons-wrapper {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .product input[type='number'] {
