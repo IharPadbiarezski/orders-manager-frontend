@@ -295,4 +295,27 @@ describe('App', () => {
 })
 ```
 
-That's all project code style rules, that we have!
+## Names of it blocks
+
+Do not add `should` to test names. It's just redundant.
+Because of it first verb in the name should be in the 3rd form 
+
+Incorrect:
+```js
+it('should work', () => {
+  expect(true).toBe(true)
+});
+
+it('work', () => {
+  expect(true).toBe(true)
+}); 
+```
+
+Correct:
+```js
+it('works', () => {
+  expect(true).toBe(true)
+}); 
+```
+
+That's all project code style rules, that we have. Enjoy!
