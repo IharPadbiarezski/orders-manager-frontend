@@ -253,7 +253,7 @@ describe('subtract', () => {
 })
 ```
 
-## Names in strings of describe blocks
+## Names of describe blocks
 
 Please use only function or component name in describe string
 
