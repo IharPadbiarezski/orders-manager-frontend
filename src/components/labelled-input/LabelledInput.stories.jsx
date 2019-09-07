@@ -23,7 +23,7 @@ storiesOf('LabelledInput', module)
     getComponent({ defaultValue: 'Super test default value' })
   )
   .add('with number type', () => getComponent({ type: 'number' }), {
-    notes: 'should render short input with type=number',
+    notes: 'renders short input with type=number',
   })
   .add(
     'with custom render function',
@@ -37,7 +37,7 @@ storiesOf('LabelledInput', module)
         ),
       }),
     {
-      notes: 'should render select',
+      notes: 'renders select',
     }
   )
   .add(
@@ -49,7 +49,7 @@ storiesOf('LabelledInput', module)
         },
       }),
     {
-      notes: 'should render red border around input',
+      notes: 'renders red border around input',
     }
   )
   .add('if has invalid data', () =>
@@ -64,6 +64,6 @@ storiesOf('LabelledInput', module)
         label: <h1>Test</h1>,
       }),
     {
-      notes: 'should render h1 tag',
+      notes: 'renders h1 tag',
     }
   )
