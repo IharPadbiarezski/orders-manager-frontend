@@ -220,15 +220,15 @@ Put blank line between describe and it blocks in tests:
 Incorrect:
 ```js
 describe('sum', () => {
-  it('should sum numbers', () => {
+  it('sums numbers', () => {
     expect(sum(2, 2)).toBe(4)
   })
-  it('should sum other numbers', () => {
+  it('sums other numbers', () => {
     expect(sum(2,3)).toBe(5)
   })
 })
 describe('subtract', () => {
-  it('should subtract numbers', () => {
+  it('subtracts numbers', () => {
     expect(subtract(2,2)).toBe(0)
   })
 })
@@ -237,17 +237,17 @@ describe('subtract', () => {
 Correct:
 ```js
 describe('sum', () => {
-  it('should sum numbers', () => {
+  it('sums numbers', () => {
     expect(sum(2, 2)).toBe(4)
   })
 
-  it('should sum other numbers', () => {
+  it('sums other numbers', () => {
     expect(sum(2,3)).toBe(5)
   })
 })
 
 describe('subtract', () => {
-  it('should subtract numbers', () => {
+  it('subtracts numbers', () => {
     expect(subtract(2,2)).toBe(0)
   })
 })
