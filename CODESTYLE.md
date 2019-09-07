@@ -220,15 +220,15 @@ Put blank line between describe and it blocks in tests:
 Incorrect:
 ```js
 describe('sum', () => {
-  it('should sum numbers', () => {
+  it('sums numbers', () => {
     expect(sum(2, 2)).toBe(4)
   })
-  it('should sum other numbers', () => {
+  it('sums other numbers', () => {
     expect(sum(2,3)).toBe(5)
   })
 })
 describe('subtract', () => {
-  it('should subtract numbers', () => {
+  it('subtracts numbers', () => {
     expect(subtract(2,2)).toBe(0)
   })
 })
@@ -237,23 +237,23 @@ describe('subtract', () => {
 Correct:
 ```js
 describe('sum', () => {
-  it('should sum numbers', () => {
+  it('sums numbers', () => {
     expect(sum(2, 2)).toBe(4)
   })
 
-  it('should sum other numbers', () => {
+  it('sums other numbers', () => {
     expect(sum(2,3)).toBe(5)
   })
 })
 
 describe('subtract', () => {
-  it('should subtract numbers', () => {
+  it('subtracts numbers', () => {
     expect(subtract(2,2)).toBe(0)
   })
 })
 ```
 
-## Names in strings of describe blocks
+## Names of describe blocks
 
 Please use only function or component name in describe string
 
@@ -295,4 +295,27 @@ describe('App', () => {
 })
 ```
 
-That's all project code style rules, that we have!
+## Names of it blocks
+
+Do not add `should` to test names. It's just redundant.
+Because of it first verb in the name should be in the 3rd form 
+
+Incorrect:
+```js
+it('should work', () => {
+  expect(true).toBe(true)
+});
+
+it('work', () => {
+  expect(true).toBe(true)
+}); 
+```
+
+Correct:
+```js
+it('works', () => {
+  expect(true).toBe(true)
+}); 
+```
+
+That's all project code style rules, that we have. Enjoy!

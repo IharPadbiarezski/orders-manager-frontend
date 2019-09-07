@@ -25,18 +25,18 @@ describe('App', () => {
 
   afterEach(() => ReactDOM.unmountComponentAtNode(container))
 
-  it('should render without crashing', () => {
+  it('renders without crashing', () => {
     render()
   })
 
-  it('should render products', () => {
+  it('renders products', () => {
     render({
       products: [{ id: 1 }, { id: 2 }, { id: 3 }],
     })
     expect(querySelectorAll('.products > *')).toHaveLength(3)
   })
 
-  it('should render 0 products', () => {
+  it('renders 0 products', () => {
     render({
       products: [],
     })
@@ -44,7 +44,7 @@ describe('App', () => {
   })
 
   it(
-    'should call addProduct callback on click on add product button ' +
+    'calls addProduct callback on click on add product button ' +
       'without arguments',
     () => {
       const onAddProduct = jest.fn()

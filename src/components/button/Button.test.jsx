@@ -26,27 +26,27 @@ describe('Button', () => {
 
   afterEach(() => ReactDOM.unmountComponentAtNode(container))
 
-  it('should render one button element', () => {
+  it('renders one button element', () => {
     render()
     expect(querySelectorAll('button')).toHaveLength(1)
   })
 
-  it('should pass additional classes to the element', () => {
+  it('passes additional classes to the element', () => {
     render({ className: 'awesome-button' })
     expect(getElement().classList.contains('awesome-button')).toBe(true)
   })
 
-  it('should pass any other passed props to the tag', () => {
+  it('passes any other passed props to the tag', () => {
     render({ id: 'nice-button' })
     expect(getElement().getAttribute('id')).toBe('nice-button')
   })
 
-  it('should render children as text', () => {
+  it('renders children as text', () => {
     render({ children: 'test content' })
     expect(getElement().innerHTML).toBe('test content')
   })
 
-  it('should render children as node', () => {
+  it('renders children as node', () => {
     render({ children: <span>text</span> })
     expect(getElement().innerHTML).toBe('<span>text</span>')
   })

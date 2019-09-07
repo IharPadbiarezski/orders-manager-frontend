@@ -16,14 +16,14 @@ describe('withClassName', () => {
     return container.childNodes[0]
   }
 
-  it('should pass className to the underlying component', () => {
+  it('passes className to the underlying component', () => {
     const EnhancedComponent = withClassName(SimpleComponent, 'test-class')
     render({ Component: EnhancedComponent })
     expect(getElement().classList).toHaveLength(1)
     expect(getElement().classList.contains('test-class')).toBe(true)
   })
 
-  it('should pass all other props to the underlying component', () => {
+  it('passes all other props to the underlying component', () => {
     const EnhancedComponent = withClassName(SimpleComponent, 'test')
     render({
       Component: EnhancedComponent,
