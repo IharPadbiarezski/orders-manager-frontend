@@ -7,9 +7,9 @@ const commonProps = {
   label: 'Test',
   text: 'Hello World!',
   options: [
-    { name: 'Good', value: 'good' },
-    { name: 'You', value: 'you' },
-    { name: 'Free', value: 'free' },
+    { id: '1', value: 'good' },
+    { id: '2', value: 'nice' },
+    { id: '3', value: 'bad' },
   ],
   onChange: action('changed'),
 }
@@ -22,6 +22,4 @@ const getComponent = (props) => {
   return <ProductParameter {...localProps} />
 }
 
-storiesOf('ProductParameter', module)
-  .add('simple', () => getComponent())
-  .add('with default value', () => getComponent({ onChange: () => {} }))
+storiesOf('ProductParameter', module).add('simple', () => getComponent())
