@@ -49,7 +49,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.stories.jsx"]
+        "devDependencies": ["**/*.stories.jsx", ".storybook/**/*.js"]
       }
     ],
     "jest-formatting/padding-around-expect-groups": "off",
