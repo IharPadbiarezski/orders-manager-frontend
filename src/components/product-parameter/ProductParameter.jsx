@@ -13,10 +13,10 @@ const ProductParameter = ({ options, onChange, ...other }) => {
       }}
     >
       {showDefaultValue && <option value="0">Выбрать</option>}
-      {options.map(({ id, value }) => {
+      {options.map(({ value, text }) => {
         return (
-          <option value={id} key={id}>
-            {value}
+          <option value={value} key={value}>
+            {text}
           </option>
         )
       })}
@@ -29,8 +29,8 @@ const ProductParameter = ({ options, onChange, ...other }) => {
 ProductParameter.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
     })
   ).isRequired,
   onChange: PropTypes.func,

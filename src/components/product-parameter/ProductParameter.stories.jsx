@@ -6,9 +6,9 @@ import ProductParameter from '.'
 const commonProps = {
   label: 'Test',
   options: [
-    { id: '1', value: 'good' },
-    { id: '2', value: 'nice' },
-    { id: '3', value: 'bad' },
+    { value: '1', text: 'good' },
+    { value: '2', text: 'nice' },
+    { value: '3', text: 'bad' },
   ],
   onChange: action('changed'),
 }
