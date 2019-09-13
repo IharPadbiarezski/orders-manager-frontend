@@ -5,7 +5,6 @@ import ProductParameter from '.'
 
 const commonProps = {
   label: 'Test',
-  text: 'Hello World!',
   options: [
     { id: '1', value: 'good' },
     { id: '2', value: 'nice' },

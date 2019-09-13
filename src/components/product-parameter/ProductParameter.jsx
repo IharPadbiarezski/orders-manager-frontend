@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import LabelledInput from '../labelled-input'
 
-const ProductParameter = ({ text, options, onChange, ...other }) => {
+const ProductParameter = ({ options, onChange, ...other }) => {
   const [showDefaultValue, setShowDefaultValue] = useState(true)
 
   const selectInput = (
@@ -27,7 +27,6 @@ const ProductParameter = ({ text, options, onChange, ...other }) => {
 }
 
 ProductParameter.propTypes = {
-  text: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
