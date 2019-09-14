@@ -33,26 +33,26 @@ function Product({ onRemove, types, onSelectProductType }) {
       </section>
       <LabelledInput
         label="Закупочная цена товара"
-        labelClassName="product__parameter"
+        labelClassName="product__option"
         required
         centered
       />
       <LabelledInput
         label="Цена товара"
-        labelClassName="product__parameter"
+        labelClassName="product__option"
         required
         centered
       />
       <LabelledInput
         label="Количество товаров"
-        labelClassName="product__parameter"
+        labelClassName="product__option"
         defaultValue="1"
         type="number"
         centered
       />
       <LabelledInput
         label="Комментарий"
-        labelClassName="product__parameter"
+        labelClassName="product__option"
         renderInput={() => (
           <textarea cols="30" rows="3" className="product__comment-area" />
         )}

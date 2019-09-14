@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-.product__parameter:not(:last-of-type) {
+.product__option:not(:last-of-type) {
   margin-bottom: 15px;
 }
 
