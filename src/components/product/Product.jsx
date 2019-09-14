@@ -60,7 +60,7 @@ function Product({ onRemove, types, onSelectProductType }) {
             id="comment-area-1"
             cols="30"
             rows="3"
-            className="comment-area"
+            className="product__comment-area"
           />
         )}
         centered

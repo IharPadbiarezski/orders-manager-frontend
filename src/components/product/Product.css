@@ -40,15 +40,11 @@
   margin-bottom: 15px;
 }
 
-.product input,
-.product textarea {
+.product__comment-area {
   width: 150px;
   padding: 5px;
   border-radius: 4px;
   border: 1px solid black;
-}
-
-.product textarea {
   vertical-align: top;
 }
 
