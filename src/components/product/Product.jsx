@@ -6,7 +6,7 @@ import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
 
-function Product({ onRemove, productTypes, onSelectProductType }) {
+function Product({ onRemove, types, onSelectProductType }) {
   return (
     <section className="product" data-product-type-id="0">
       <div className="product__close-wrapper">
@@ -21,8 +21,8 @@ function Product({ onRemove, productTypes, onSelectProductType }) {
         centered
       />
       <span className="product__type">Тип товара</span>
-      <section className="product__product-types">
-        {productTypes.map(({ id, value }) => (
+      <section className="product__types">
+        {types.map(({ id, value }) => (
           <ProductTypeButton
             key={id}
             onClick={() => onSelectProductType({ id, value })}
@@ -70,7 +70,7 @@ function Product({ onRemove, productTypes, onSelectProductType }) {
 
 Product.propTypes = {
   onRemove: PropTypes.func,
-  productTypes: PropTypes.arrayOf(
+  types: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.required,
       value: PropTypes.string.required,
@@ -81,7 +81,7 @@ Product.propTypes = {
 
 Product.defaultProps = {
   onRemove: () => {},
-  productTypes: [],
+  types: [],
   onSelectProductType: () => {},
 }
 

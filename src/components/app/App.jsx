@@ -39,7 +39,7 @@ function App({ products, onAddProduct, onRemoveProduct }) {
                 <Product
                   key={id}
                   onRemove={() => onRemoveProduct(id)}
-                  productTypes={productTypes}
+                  types={productTypes}
                 />
               ))}
             </div>
