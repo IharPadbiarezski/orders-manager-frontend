@@ -34,21 +34,18 @@ function Product({ onRemove, types, onSelectProductType }) {
       <div className="product__parameters">
         <LabelledInput
           label="Закупочная цена товара"
-          inputClassName="purchase-price-input"
           labelClassName="product__parameter"
           required
           centered
         />
         <LabelledInput
           label="Цена товара"
-          inputClassName="price-input"
           labelClassName="product__parameter"
           required
           centered
         />
         <LabelledInput
           label="Количество товаров"
-          inputClassName="number-input"
           labelClassName="product__parameter"
           defaultValue="1"
           type="number"
