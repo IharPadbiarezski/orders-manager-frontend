@@ -55,22 +55,6 @@ const jsx = <input type="text">
 }
 ```
 
-## Import order
-
-Please firstly import node modules and next any project files:
-
-Incorrect:
-```js
-import App from './app'
-import classNames from 'classnames'
-```
-
-Correct:
-```js
-import classNames from 'classnames'
-import App from './app'
-``` 
-
 ## JSX only in .jsx files
 
 Please write jsx only in files with extension `jsx`
