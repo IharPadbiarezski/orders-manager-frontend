@@ -16,7 +16,7 @@ function Product({ onRemove, types, onSelectProductType }) {
       </div>
       <LabelledInput
         label="Имя товара"
-        inputClassName="name-input"
+        inputClassName="product__name-input"
         disabled
         centered
       />
