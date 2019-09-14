@@ -31,27 +31,25 @@ function Product({ onRemove, types, onSelectProductType }) {
           </ProductTypeButton>
         ))}
       </section>
-      <div className="product__parameters">
-        <LabelledInput
-          label="Закупочная цена товара"
-          labelClassName="product__parameter"
-          required
-          centered
-        />
-        <LabelledInput
-          label="Цена товара"
-          labelClassName="product__parameter"
-          required
-          centered
-        />
-        <LabelledInput
-          label="Количество товаров"
-          labelClassName="product__parameter"
-          defaultValue="1"
-          type="number"
-          centered
-        />
-      </div>
+      <LabelledInput
+        label="Закупочная цена товара"
+        labelClassName="product__parameter"
+        required
+        centered
+      />
+      <LabelledInput
+        label="Цена товара"
+        labelClassName="product__parameter"
+        required
+        centered
+      />
+      <LabelledInput
+        label="Количество товаров"
+        labelClassName="product__parameter"
+        defaultValue="1"
+        type="number"
+        centered
+      />
       <LabelledInput
         label="Комментарий"
         labelClassName="product__parameter"
