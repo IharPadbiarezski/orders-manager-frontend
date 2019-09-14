@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Product from './Product'
+import Product, { OPTIONS_MODES } from './Product'
 
 describe('Product', () => {
   const container = document.createElement('div')
@@ -62,4 +62,37 @@ describe('Product', () => {
       expect(onSelectProductType).toHaveBeenCalledWith({ id: 1, value: 'test' })
     }
   )
+
+  it('renders parameters when mode is parameters and they are passed', () => {
+    const parameters = [
+      {
+        name: 'size',
+        options: [
+          {
+            text: 'L',
+            value: 'L',
+          },
+        ],
+      },
+      {
+        name: 'material',
+        options: [
+          {
+            text: 'cotton',
+            value: 'cotton',
+          },
+          {
+            text: 'sink',
+            value: 'sink',
+          },
+        ],
+      },
+    ]
+    render({
+      optionsMode: OPTIONS_MODES.PARAMETERS,
+      parameters,
+    })
+    const parameterElements = querySelectorAll('.product__parameters > *')
+    expect(parameterElements).toHaveLength(2)
+  })
 })

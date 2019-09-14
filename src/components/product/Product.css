@@ -35,6 +35,17 @@
   text-align: center;
 }
 
+.product__parameters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.product__parameter {
+  margin: 0 10px 5px 0;
+}
+
 .product__option:not(:last-of-type) {
   margin-bottom: 15px;
 }

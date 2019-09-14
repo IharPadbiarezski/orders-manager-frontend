@@ -5,8 +5,20 @@ import LabelledInput from '../labelled-input'
 import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
+import ProductParameter from '../product-parameter'
 
-function Product({ onRemove, types, onSelectProductType }) {
+const OPTIONS_MODES = {
+  TYPES: 'types',
+  PARAMETERS: 'parameters',
+}
+
+function Product({
+  onRemove,
+  types,
+  onSelectProductType,
+  optionsMode,
+  parameters,
+}) {
   return (
     <section className="product">
       <div className="product__close-wrapper">
@@ -21,16 +33,30 @@ function Product({ onRemove, types, onSelectProductType }) {
         centered
       />
       <span className="product__type">Тип товара</span>
-      <section className="product__types">
-        {types.map(({ id, value }) => (
-          <ProductTypeButton
-            key={id}
-            onClick={() => onSelectProductType({ id, value })}
-          >
-            {value}
-          </ProductTypeButton>
-        ))}
-      </section>
+      {optionsMode === OPTIONS_MODES.TYPES && (
+        <section className="product__types">
+          {types.map(({ id, value }) => (
+            <ProductTypeButton
+              key={id}
+              onClick={() => onSelectProductType({ id, value })}
+            >
+              {value}
+            </ProductTypeButton>
+          ))}
+        </section>
+      )}
+      {optionsMode === OPTIONS_MODES.PARAMETERS && (
+        <section className="product__parameters">
+          {parameters.map((parameter) => (
+            <ProductParameter
+              options={parameter.options}
+              label={parameter.name}
+              key={parameter.name}
+              labelClassName="product__parameter"
+            />
+          ))}
+        </section>
+      )}
       <LabelledInput
         label="Закупочная цена товара"
         labelClassName="product__option"
@@ -71,12 +97,22 @@ Product.propTypes = {
     })
   ),
   onSelectProductType: PropTypes.func,
+  optionsMode: PropTypes.oneOf([OPTIONS_MODES.TYPES, OPTIONS_MODES.PARAMETERS]),
+  parameters: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      options: ProductParameter.propTypes.options,
+    })
+  ),
 }
 
 Product.defaultProps = {
   onRemove: () => {},
   types: [],
   onSelectProductType: () => {},
+  optionsMode: OPTIONS_MODES.TYPES,
+  parameters: [],
 }
 
 export default Product
+export { OPTIONS_MODES }
