@@ -54,12 +54,7 @@ function Product({ onRemove, types, onSelectProductType }) {
         label="Комментарий"
         labelClassName="product__parameter"
         renderInput={() => (
-          <textarea
-            id="comment-area-1"
-            cols="30"
-            rows="3"
-            className="product__comment-area"
-          />
+          <textarea cols="30" rows="3" className="product__comment-area" />
         )}
         centered
       />
