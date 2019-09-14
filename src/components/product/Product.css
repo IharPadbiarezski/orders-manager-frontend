@@ -1,5 +1,3 @@
-@import 'productParameters.css';
-
 .product {
   display: flex;
   flex-direction: column;
