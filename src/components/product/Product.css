@@ -31,6 +31,11 @@
   color: black;
 }
 
+.product__types {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .product__type {
   margin-top: 10px;
   text-align: center;
@@ -46,9 +51,4 @@
   border-radius: 4px;
   border: 1px solid black;
   vertical-align: top;
-}
-
-.product__types {
-  margin-bottom: 10px;
-  text-align: center;
 }
