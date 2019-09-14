@@ -8,7 +8,7 @@ import Button from '../button'
 
 function Product({ onRemove, types, onSelectProductType }) {
   return (
-    <section className="product" data-product-type-id="0">
+    <section className="product">
       <div className="product__close-wrapper">
         <Button className="product__close-button" onClick={() => onRemove()}>
           <i className="icon-close" />
