@@ -8,7 +8,8 @@
     "airbnb",
     "plugin:prettier/recommended",
     "plugin:jest/recommended",
-    "plugin:jest-formatting/recommended"
+    "plugin:jest-formatting/recommended",
+    "plugin:react-redux/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -21,7 +22,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "jest", "jest-formatting"],
+  "plugins": ["react", "jest", "jest-formatting", "react-redux"],
   "rules": {
     "max-len": [
       "error",
@@ -53,6 +54,8 @@
       }
     ],
     "jest-formatting/padding-around-expect-groups": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "react-redux/prefer-separate-component-file": "off",
+    "react/no-unused-prop-types": "off"
   }
 }
