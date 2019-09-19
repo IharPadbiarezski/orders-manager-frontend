@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Product, { OPTIONS_MODES } from './Product'
+import { Product, OPTIONS_MODES } from './Product'
 
 describe('Product', () => {
   const container = document.createElement('div')
   document.body.appendChild(container)
 
   function render(props) {
-    ReactDOM.render(<Product {...props} />, container)
+    ReactDOM.render(<Product id={1} {...props} />, container)
   }
 
   function querySelectorAll(...params) {

@@ -2,35 +2,30 @@ import reducer, { getMaximumProductId } from './products_reducer'
 import { addProduct, removeProduct } from '../actions'
 
 describe('products reducer', () => {
-  it('returns the initial state', () => {
-    const expected = [{ id: 1 }]
-    expect(reducer(undefined, {})).toEqual(expected)
-  })
-
   it('handles addProduct action', () => {
-    const actual = reducer([{ id: 1 }], addProduct())
-    const expected = [{ id: 1 }, { id: 2 }]
+    const actual = reducer({ items: [{ id: 1 }] }, addProduct())
+    const expected = { items: [{ id: 1 }, { id: 2 }] }
     expect(actual).toEqual(expected)
   })
 
   it('handles addProduct action with complex state', () => {
-    const state = [{ id: 1 }, { id: 3 }]
+    const state = { items: [{ id: 1 }, { id: 3 }] }
     const actual = reducer(state, addProduct())
-    const expected = [{ id: 1 }, { id: 3 }, { id: 4 }]
+    const expected = { items: [{ id: 1 }, { id: 3 }, { id: 4 }] }
     expect(actual).toEqual(expected)
   })
 
   it('handles removeProduct action', () => {
-    const state = [{ id: 1 }, { id: 2 }]
+    const state = { items: [{ id: 1 }, { id: 2 }] }
     const actual = reducer(state, removeProduct(1))
-    const expected = [{ id: 2 }]
+    const expected = { items: [{ id: 2 }] }
     expect(actual).toEqual(expected)
   })
 
   it('handles removeProduct action 2', () => {
-    const state = [{ id: 1 }, { id: 2 }, { id: 5 }]
+    const state = { items: [{ id: 1 }, { id: 2 }, { id: 5 }] }
     const actual = reducer(state, removeProduct(2))
-    const expected = [{ id: 1 }, { id: 5 }]
+    const expected = { items: [{ id: 1 }, { id: 5 }] }
     expect(actual).toEqual(expected)
   })
 })

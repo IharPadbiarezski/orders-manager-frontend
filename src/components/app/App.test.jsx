@@ -29,13 +29,6 @@ describe('App', () => {
     render()
   })
 
-  it('renders products', () => {
-    render({
-      products: [{ id: 1 }, { id: 2 }, { id: 3 }],
-    })
-    expect(querySelectorAll('.products > *')).toHaveLength(3)
-  })
-
   it('renders 0 products', () => {
     render({
       products: [],

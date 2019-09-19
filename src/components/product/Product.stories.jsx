@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Product, { OPTIONS_MODES } from './Product'
+import { Product, OPTIONS_MODES } from './Product'
 
 const parameters = [
   {
@@ -59,9 +59,10 @@ const parameters = [
   },
 ]
 storiesOf('Product', module)
-  .add('simple', () => <Product onRemove={action('removed')} />)
+  .add('simple', () => <Product id={1} onRemove={action('removed')} />)
   .add('with product types', () => (
     <Product
+      id={1}
       onRemove={action('removed')}
       types={[{ id: 1, value: 'first' }, { id: 2, value: 'second' }]}
       onSelectProductType={action('selected product type')}
@@ -69,10 +70,15 @@ storiesOf('Product', module)
   ))
   .add('with few product parameters', () => (
     <Product
+      id={1}
       optionsMode={OPTIONS_MODES.PARAMETERS}
       parameters={parameters.slice(0, 2)}
     />
   ))
   .add('with plenty product parameters', () => (
-    <Product optionsMode={OPTIONS_MODES.PARAMETERS} parameters={parameters} />
+    <Product
+      id={1}
+      optionsMode={OPTIONS_MODES.PARAMETERS}
+      parameters={parameters}
+    />
   ))

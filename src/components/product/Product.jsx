@@ -6,6 +6,8 @@ import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
 import ProductParameter from '../product-parameter'
+import { removeProduct } from '../../actions'
+import { connect } from 'react-redux'
 
 const OPTIONS_MODES = {
   TYPES: 'types',
@@ -89,6 +91,7 @@ function Product({
 }
 
 Product.propTypes = {
+  id: PropTypes.number.isRequired,
   onRemove: PropTypes.func,
   types: PropTypes.arrayOf(
     PropTypes.shape({
@@ -114,5 +117,20 @@ Product.defaultProps = {
   parameters: [],
 }
 
-export default Product
-export { OPTIONS_MODES }
+const mapStateToProps = (state, ownProps) => ({
+  types: state.products.types,
+  optionsMode: state.products.items[ownProps.id - 1].optionsMode,
+  parameters: state.products.parameters,
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onRemove: () => dispatch(removeProduct(ownProps.id)),
+})
+
+const ConnectedProduct = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Product)
+
+export default ConnectedProduct
+export { OPTIONS_MODES, Product }
