@@ -1,5 +1,6 @@
 import { ADD_PRODUCT, REMOVE_PRODUCT, SELECT_PRODUCT_TYPE } from '../actions'
 import { OPTIONS_MODES } from '../components/product/Product'
+import createProduct from '../models/product'
 
 const productTypes = [
   { id: 1, value: 'одеяло' },
@@ -12,7 +13,7 @@ const productTypes = [
 ]
 
 const initialState = {
-  items: [{ id: 1, optionsMode: OPTIONS_MODES.TYPES }],
+  items: [createProduct({ id: 1 })],
   types: productTypes,
   parameters: [
     {
@@ -80,7 +81,7 @@ function itemsReducer(state = initialState.items, action) {
   switch (action.type) {
     case ADD_PRODUCT: {
       const newProductId = getMaximumProductId(state) + 1
-      return [...state, { id: newProductId, optionsMode: OPTIONS_MODES.TYPES }]
+      return [...state, createProduct({ id: newProductId })]
     }
     case REMOVE_PRODUCT:
       return state.filter(({ id }) => id !== action.payload.id)

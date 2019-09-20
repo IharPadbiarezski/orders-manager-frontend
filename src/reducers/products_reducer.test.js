@@ -1,61 +1,61 @@
 import reducer, { getMaximumProductId } from './products_reducer'
 import { addProduct, removeProduct } from '../actions'
-import { OPTIONS_MODES } from '../components/product/Product'
+import createProduct from '../models/product'
+
+const createMockProduct = (id) => createProduct({ id })
 
 describe('products reducer', () => {
   it('handles addProduct action', () => {
-    const actual = reducer({ items: [{ id: 1 }] }, addProduct())
+    const actual = reducer({ items: [createMockProduct(1)] }, addProduct())
     const expected = {
-      items: [{ id: 1 }, { id: 2, optionsMode: OPTIONS_MODES.TYPES }],
+      items: [createMockProduct(1), createMockProduct(2)],
     }
     expect(actual).toEqual(expected)
   })
 
   it('handles addProduct action with complex state', () => {
-    const state = { items: [{ id: 1 }, { id: 3 }] }
+    const state = { items: [createMockProduct(1), createMockProduct(3)] }
     const actual = reducer(state, addProduct())
     const expected = {
-      items: [
-        { id: 1 },
-        { id: 3 },
-        { id: 4, optionsMode: OPTIONS_MODES.TYPES },
-      ],
+      items: [createMockProduct(1), createMockProduct(3), createMockProduct(4)],
     }
     expect(actual).toEqual(expected)
   })
 
   it('handles removeProduct action', () => {
-    const state = { items: [{ id: 1 }, { id: 2 }] }
+    const state = { items: [createMockProduct(1), createMockProduct(2)] }
     const actual = reducer(state, removeProduct(1))
-    const expected = { items: [{ id: 2 }] }
+    const expected = { items: [createMockProduct(2)] }
     expect(actual).toEqual(expected)
   })
 
   it('handles removeProduct action 2', () => {
-    const state = { items: [{ id: 1 }, { id: 2 }, { id: 5 }] }
+    const state = {
+      items: [createMockProduct(1), createMockProduct(2), createMockProduct(5)],
+    }
     const actual = reducer(state, removeProduct(2))
-    const expected = { items: [{ id: 1 }, { id: 5 }] }
+    const expected = { items: [createMockProduct(1), createMockProduct(5)] }
     expect(actual).toEqual(expected)
   })
 })
 
 describe('getMaximumProductId', () => {
   it('returns maximum product id for 1 product', () => {
-    expect(getMaximumProductId([{ id: 1 }])).toBe(1)
+    expect(getMaximumProductId([createMockProduct(1)])).toBe(1)
   })
 
   it('returns maximum product id for 2 products', () => {
-    const products = [{ id: 10 }, { id: 20 }]
+    const products = [createMockProduct(10), createMockProduct(20)]
     expect(getMaximumProductId(products)).toBe(20)
   })
 
   it('returns maximum product id for 5 products', () => {
     const products = [
-      { id: 2 },
-      { id: 10 },
-      { id: 13 },
-      { id: 50 },
-      { id: 100 },
+      createMockProduct(2),
+      createMockProduct(10),
+      createMockProduct(13),
+      createMockProduct(50),
+      createMockProduct(100),
     ]
     expect(getMaximumProductId(products)).toBe(100)
   })
