@@ -1,17 +1,26 @@
 import reducer, { getMaximumProductId } from './products_reducer'
 import { addProduct, removeProduct } from '../actions'
+import { OPTIONS_MODES } from '../components/product/Product'
 
 describe('products reducer', () => {
   it('handles addProduct action', () => {
     const actual = reducer({ items: [{ id: 1 }] }, addProduct())
-    const expected = { items: [{ id: 1 }, { id: 2 }] }
+    const expected = {
+      items: [{ id: 1 }, { id: 2, optionsMode: OPTIONS_MODES.TYPES }],
+    }
     expect(actual).toEqual(expected)
   })
 
   it('handles addProduct action with complex state', () => {
     const state = { items: [{ id: 1 }, { id: 3 }] }
     const actual = reducer(state, addProduct())
-    const expected = { items: [{ id: 1 }, { id: 3 }, { id: 4 }] }
+    const expected = {
+      items: [
+        { id: 1 },
+        { id: 3 },
+        { id: 4, optionsMode: OPTIONS_MODES.TYPES },
+      ],
+    }
     expect(actual).toEqual(expected)
   })
 
