@@ -3,7 +3,7 @@ import { OPTIONS_MODES } from '../components/product/Product'
 import createProduct, {
   mockProductParameters,
   mockProductTypes,
-} from '../models/product'
+} from '../models/product_model'
 
 const initialState = {
   items: [createProduct({ id: 1 })],

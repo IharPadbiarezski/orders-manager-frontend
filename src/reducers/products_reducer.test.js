@@ -1,6 +1,6 @@
 import reducer, { getMaximumProductId } from './products_reducer'
 import { addProduct, removeProduct } from '../actions'
-import createProduct from '../models/product'
+import createProduct from '../models/product_model'
 
 const createMockProduct = (id) => createProduct({ id })
 
