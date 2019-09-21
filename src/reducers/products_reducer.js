@@ -29,6 +29,19 @@ function itemsReducer(state = initialState.items, action) {
   }
 }
 
+function chooseTypeReducer(state = initialState.items, action) {
+  return state.map((product) => {
+    if (product.id === action.payload.productId) {
+      return {
+        ...product,
+        type: action.payload.productType,
+        optionsMode: OPTIONS_MODES.PARAMETERS,
+      }
+    }
+    return product
+  })
+}
+
 export default function productsReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_PRODUCT:
@@ -38,16 +51,7 @@ export default function productsReducer(state = initialState, action) {
     case CHOOSE_PRODUCT_TYPE: {
       return {
         ...state,
-        items: state.items.map((product) => {
-          if (product.id === action.payload.productId) {
-            return {
-              ...product,
-              type: action.payload.productType,
-              optionsMode: OPTIONS_MODES.PARAMETERS,
-            }
-          }
-          return product
-        }),
+        items: chooseTypeReducer(state.items, action),
       }
     }
     default:
