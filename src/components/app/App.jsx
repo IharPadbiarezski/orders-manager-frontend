@@ -8,6 +8,7 @@ import ConnectedProduct from '../product'
 import Button from '../button'
 import CustomerData from '../customer-data'
 import { addProduct } from '../../actions'
+import { selectProducts } from '../../selectors/product_selectors'
 
 function App({ products, onAddProduct }) {
   return (
@@ -58,7 +59,7 @@ App.defaultProps = {
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products.items,
+  products: selectProducts(state),
 })
 
 const mapDispatchToProps = {

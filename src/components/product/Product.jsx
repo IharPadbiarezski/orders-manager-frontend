@@ -8,6 +8,11 @@ import Button from '../button'
 import ProductParameter from '../product-parameter'
 import { removeProduct, chooseProductType } from '../../actions'
 import { connect } from 'react-redux'
+import {
+  selectMockParameters,
+  selectMockTypes,
+  selectOptionsMode,
+} from '../../selectors/product_selectors'
 
 const OPTIONS_MODES = {
   TYPES: 'types',
@@ -118,9 +123,9 @@ Product.defaultProps = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  types: state.products.types,
-  optionsMode: state.products.items[ownProps.id - 1].optionsMode,
-  parameters: state.products.parameters,
+  types: selectMockTypes(state),
+  optionsMode: selectOptionsMode(state, ownProps.id),
+  parameters: selectMockParameters(state),
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
