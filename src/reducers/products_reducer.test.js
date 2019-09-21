@@ -1,6 +1,7 @@
 import reducer, { getMaximumProductId } from './products_reducer'
-import { addProduct, removeProduct } from '../actions'
+import { addProduct, chooseProductType, removeProduct } from '../actions'
 import createProduct from '../models/product_model'
+import { OPTIONS_MODES } from '../components/product/Product'
 
 const createMockProduct = (id) => createProduct({ id })
 
@@ -35,6 +36,52 @@ describe('products reducer', () => {
     }
     const actual = reducer(state, removeProduct(2))
     const expected = { items: [createMockProduct(1), createMockProduct(5)] }
+    expect(actual).toEqual(expected)
+  })
+
+  it('handles chooseProductType action on simple state', () => {
+    const state = {
+      items: [createMockProduct(1)],
+    }
+    const actual = reducer(
+      state,
+      chooseProductType(1, { id: 1, value: 'test' })
+    )
+    const expected = {
+      items: [
+        createProduct({
+          id: 1,
+          optionsMode: OPTIONS_MODES.PARAMETERS,
+          type: { id: 1, value: 'test' },
+        }),
+      ],
+    }
+    expect(actual).toEqual(expected)
+  })
+
+  it('handles chooseProductType action on complex state', () => {
+    const state = {
+      items: [
+        createMockProduct(1),
+        createMockProduct(5),
+        createMockProduct(10),
+      ],
+    }
+    const actual = reducer(
+      state,
+      chooseProductType(5, { id: 1, value: 'jest' })
+    )
+    const expected = {
+      items: [
+        createMockProduct(1),
+        createProduct({
+          id: 5,
+          optionsMode: OPTIONS_MODES.PARAMETERS,
+          type: { id: 1, value: 'jest' },
+        }),
+        createMockProduct(10),
+      ],
+    }
     expect(actual).toEqual(expected)
   })
 })
