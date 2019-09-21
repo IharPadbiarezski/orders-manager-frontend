@@ -48,18 +48,18 @@ describe('Product', () => {
   })
 
   it(
-    'calls onSelectProductType prop with productType object, ' +
+    'calls onChooseProductType prop with productType object, ' +
       'when user clicks on type',
     () => {
       const types = [{ id: 1, value: 'test' }]
-      const onSelectProductType = jest.fn()
+      const onChooseProductType = jest.fn()
       render({
         types,
-        onSelectProductType,
+        onChooseProductType,
       })
       const productTypesButtons = querySelectorAll('.product__types > *')
       productTypesButtons[0].click()
-      expect(onSelectProductType).toHaveBeenCalledWith({ id: 1, value: 'test' })
+      expect(onChooseProductType).toHaveBeenCalledWith({ id: 1, value: 'test' })
     }
   )
 

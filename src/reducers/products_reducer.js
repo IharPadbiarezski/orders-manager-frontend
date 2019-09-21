@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT, SELECT_PRODUCT_TYPE } from '../actions'
+import { ADD_PRODUCT, REMOVE_PRODUCT, CHOOSE_PRODUCT_TYPE } from '../actions'
 import { OPTIONS_MODES } from '../components/product/Product'
 import createProduct, {
   mockProductParameters,
@@ -35,7 +35,7 @@ export default function productsReducer(state = initialState, action) {
     case REMOVE_PRODUCT: {
       return { ...state, items: itemsReducer(state.items, action) }
     }
-    case SELECT_PRODUCT_TYPE: {
+    case CHOOSE_PRODUCT_TYPE: {
       return {
         ...state,
         items: state.items.map((product) => {

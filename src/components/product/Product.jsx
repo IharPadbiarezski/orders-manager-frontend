@@ -6,7 +6,7 @@ import '../../assets/fontello/css/fontello.css'
 import ProductTypeButton from './product-type-button'
 import Button from '../button'
 import ProductParameter from '../product-parameter'
-import { removeProduct, selectProductType } from '../../actions'
+import { removeProduct, chooseProductType } from '../../actions'
 import { connect } from 'react-redux'
 
 const OPTIONS_MODES = {
@@ -17,7 +17,7 @@ const OPTIONS_MODES = {
 function Product({
   onRemove,
   types,
-  onSelectProductType,
+  onChooseProductType,
   optionsMode,
   parameters,
 }) {
@@ -40,7 +40,7 @@ function Product({
           {types.map(({ id, value }) => (
             <ProductTypeButton
               key={id}
-              onClick={() => onSelectProductType({ id, value })}
+              onClick={() => onChooseProductType({ id, value })}
             >
               {value}
             </ProductTypeButton>
@@ -99,7 +99,7 @@ Product.propTypes = {
       value: PropTypes.string.required,
     })
   ),
-  onSelectProductType: PropTypes.func,
+  onChooseProductType: PropTypes.func,
   optionsMode: PropTypes.oneOf([OPTIONS_MODES.TYPES, OPTIONS_MODES.PARAMETERS]),
   parameters: PropTypes.arrayOf(
     PropTypes.shape({
@@ -112,7 +112,7 @@ Product.propTypes = {
 Product.defaultProps = {
   onRemove: () => {},
   types: [],
-  onSelectProductType: () => {},
+  onChooseProductType: () => {},
   optionsMode: OPTIONS_MODES.TYPES,
   parameters: [],
 }
@@ -125,8 +125,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onRemove: () => dispatch(removeProduct(ownProps.id)),
-  onSelectProductType: (productType) =>
-    dispatch(selectProductType(ownProps.id, productType)),
+  onChooseProductType: (productType) =>
+    dispatch(chooseProductType(ownProps.id, productType)),
 })
 
 const ConnectedProduct = connect(

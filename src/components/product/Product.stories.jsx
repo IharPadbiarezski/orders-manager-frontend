@@ -65,7 +65,7 @@ storiesOf('Product', module)
       id={1}
       onRemove={action('removed')}
       types={[{ id: 1, value: 'first' }, { id: 2, value: 'second' }]}
-      onSelectProductType={action('selected product type')}
+      onChooseProductType={action('chosen product type')}
     />
   ))
   .add('with few product parameters', () => (
