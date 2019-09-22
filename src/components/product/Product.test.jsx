@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Product from './Product'
+import { Product } from './Product'
+import { OPTIONS_MODES } from '../../models/product_model'
 
 describe('Product', () => {
   const container = document.createElement('div')
   document.body.appendChild(container)
 
   function render(props) {
-    ReactDOM.render(<Product {...props} />, container)
+    ReactDOM.render(<Product id={1} {...props} />, container)
   }
 
   function querySelectorAll(...params) {
@@ -32,36 +33,67 @@ describe('Product', () => {
     }
   )
 
-  it('renders 0 product types', () => {
-    render({ productTypes: [] })
-    const productTypes = querySelectorAll('.product__product-types > *')
+  it('renders 0 types', () => {
+    render({ types: [] })
+    const productTypes = querySelectorAll('.product__types > *')
     expect(productTypes).toHaveLength(0)
   })
 
-  it('renders 2 product types', () => {
-    const productTypes = [{ id: 1, value: 'first' }, { id: 2, value: 'second' }]
+  it('renders 2 types', () => {
+    const types = [{ id: 1, value: 'first' }, { id: 2, value: 'second' }]
     render({
-      productTypes,
+      types,
     })
-    const productTypesButtons = querySelectorAll('.product__product-types > *')
+    const productTypesButtons = querySelectorAll('.product__types > *')
     expect(productTypesButtons).toHaveLength(2)
   })
 
   it(
-    'calls onSelectProductType prop with productType object, ' +
-      'when user clicks on product type',
+    'calls onChooseProductType prop with productType object, ' +
+      'when user clicks on type',
     () => {
-      const productTypes = [{ id: 1, value: 'test' }]
-      const onSelectProductType = jest.fn()
+      const types = [{ id: 1, value: 'test' }]
+      const onChooseProductType = jest.fn()
       render({
-        productTypes,
-        onSelectProductType,
+        types,
+        onChooseProductType,
       })
-      const productTypesButtons = querySelectorAll(
-        '.product__product-types > *'
-      )
+      const productTypesButtons = querySelectorAll('.product__types > *')
       productTypesButtons[0].click()
-      expect(onSelectProductType).toHaveBeenCalledWith({ id: 1, value: 'test' })
+      expect(onChooseProductType).toHaveBeenCalledWith({ id: 1, value: 'test' })
     }
   )
+
+  it('renders parameters when mode is parameters and they are passed', () => {
+    const parameters = [
+      {
+        name: 'size',
+        options: [
+          {
+            text: 'L',
+            value: 'L',
+          },
+        ],
+      },
+      {
+        name: 'material',
+        options: [
+          {
+            text: 'cotton',
+            value: 'cotton',
+          },
+          {
+            text: 'sink',
+            value: 'sink',
+          },
+        ],
+      },
+    ]
+    render({
+      optionsMode: OPTIONS_MODES.PARAMETERS,
+      parameters,
+    })
+    const parameterElements = querySelectorAll('.product__parameters > *')
+    expect(parameterElements).toHaveLength(2)
+  })
 })

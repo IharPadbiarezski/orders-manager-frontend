@@ -1,3 +1,3 @@
-import Product from './Product'
+import ConnectedProduct from './Product'
 
-export default Product
+export default ConnectedProduct

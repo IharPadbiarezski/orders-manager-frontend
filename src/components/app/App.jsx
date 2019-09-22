@@ -4,22 +4,13 @@ import { connect } from 'react-redux'
 import './App.css'
 import Nav from '../nav'
 import LabelledInput from '../labelled-input'
-import Product from '../product'
+import ConnectedProduct from '../product'
 import Button from '../button'
 import CustomerData from '../customer-data'
-import { addProduct, removeProduct } from '../../actions'
+import { addProduct } from '../../actions'
+import { selectProducts } from '../../selectors/product_selectors'
 
-const productTypes = [
-  { id: 1, value: 'одеяло' },
-  { id: 2, value: 'подушка' },
-  { id: 3, value: 'постельное бельё' },
-  { id: 4, value: 'простыня на резинке' },
-  { id: 5, value: 'наматрасник' },
-  { id: 6, value: 'плед' },
-  { id: 7, value: 'полотенце' },
-]
-
-function App({ products, onAddProduct, onRemoveProduct }) {
+function App({ products, onAddProduct }) {
   return (
     <>
       <Nav />
@@ -36,11 +27,7 @@ function App({ products, onAddProduct, onRemoveProduct }) {
           <section className="main-content-wrapper">
             <div className="products">
               {products.map(({ id }) => (
-                <Product
-                  key={id}
-                  onRemove={() => onRemoveProduct(id)}
-                  productTypes={productTypes}
-                />
+                <ConnectedProduct key={id} id={id} />
               ))}
             </div>
             <Button className="btn-add-product" onClick={() => onAddProduct()}>
@@ -64,22 +51,19 @@ App.propTypes = {
     })
   ),
   onAddProduct: PropTypes.func,
-  onRemoveProduct: PropTypes.func,
 }
 
 App.defaultProps = {
   products: [],
   onAddProduct: () => {},
-  onRemoveProduct: () => {},
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products,
+  products: selectProducts(state),
 })
 
 const mapDispatchToProps = {
   onAddProduct: addProduct,
-  onRemoveProduct: removeProduct,
 }
 
 export default connect(
