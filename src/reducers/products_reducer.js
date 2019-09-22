@@ -1,8 +1,8 @@
 import { ADD_PRODUCT, REMOVE_PRODUCT, CHOOSE_PRODUCT_TYPE } from '../actions'
-import { OPTIONS_MODES } from '../components/product/Product'
 import createProduct, {
   mockProductParameters,
   mockProductTypes,
+  OPTIONS_MODES,
 } from '../models/product_model'
 
 const initialState = {

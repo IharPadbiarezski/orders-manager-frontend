@@ -1,4 +1,7 @@
-import { OPTIONS_MODES } from '../components/product/Product'
+const OPTIONS_MODES = {
+  TYPES: 'types',
+  PARAMETERS: 'parameters',
+}
 
 const createProduct = ({ id, optionsMode = OPTIONS_MODES.TYPES, type }) => ({
   id,
@@ -74,4 +77,4 @@ const mockProductParameters = [
   },
 ]
 
-export { mockProductTypes, mockProductParameters }
+export { mockProductTypes, mockProductParameters, OPTIONS_MODES }

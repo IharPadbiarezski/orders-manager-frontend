@@ -1,5 +1,4 @@
-import createProduct from '../models/product_model'
-import { OPTIONS_MODES } from '../components/product/Product'
+import createProduct, { OPTIONS_MODES } from '../models/product_model'
 import { selectOptionsMode } from './product_selectors'
 
 describe('selectOptionsMode', () => {

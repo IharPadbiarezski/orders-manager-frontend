@@ -13,11 +13,7 @@ import {
   selectMockTypes,
   selectOptionsMode,
 } from '../../selectors/product_selectors'
-
-const OPTIONS_MODES = {
-  TYPES: 'types',
-  PARAMETERS: 'parameters',
-}
+import { OPTIONS_MODES } from '../../models/product_model'
 
 function Product({
   onRemove,
@@ -140,4 +136,4 @@ const ConnectedProduct = connect(
 )(Product)
 
 export default ConnectedProduct
-export { OPTIONS_MODES, Product }
+export { Product }

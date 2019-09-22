@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Product, OPTIONS_MODES } from './Product'
+import { Product } from './Product'
+import { OPTIONS_MODES } from '../../models/product_model'
 
 describe('Product', () => {
   const container = document.createElement('div')
