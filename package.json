@@ -1,6 +1,6 @@
 {
   "name": "orders-manager-frontend",
-  "homepage": "https://dimadk24.github.io/orders-manager-frontend",
+  "homepage": "https://orders-manager.netlify.com/",
   "description": "app for managing orders in online store",
   "repository": {
     "type": "git",
@@ -29,8 +29,6 @@
     "lint:js": "eslint \"src/**/*.{js,jsx}\" \".storybook/**/*.js\" --max-warnings=0",
     "lint:css": "stylelint \"src/**/*.{css,sass,scss}\"",
     "lint": "yarn lint:js && yarn lint:css",
-    "deploy": "gh-pages -d build",
-    "predeploy": "yarn build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -60,7 +58,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "gh-pages": "^2.0.1",
     "prettier": "1.18.2",
     "stylelint": "~10.1.0",
     "stylelint-config-prettier": "^5.2.0",
