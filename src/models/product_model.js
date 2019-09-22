@@ -9,8 +9,6 @@ const createProduct = ({ id, optionsMode = OPTIONS_MODES.TYPES, type }) => ({
   type,
 })
 
-export default createProduct
-
 const mockProductTypes = [
   { id: 1, value: 'одеяло' },
   { id: 2, value: 'подушка' },
@@ -76,5 +74,7 @@ const mockProductParameters = [
     ],
   },
 ]
+
+export default createProduct
 
 export { mockProductTypes, mockProductParameters, OPTIONS_MODES }
