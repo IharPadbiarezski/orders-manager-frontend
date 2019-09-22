@@ -59,4 +59,4 @@ export default function productsReducer(state = initialState, action) {
   }
 }
 
-export { getMaximumProductId }
+export { getMaximumProductId, itemsReducer, chooseTypeReducer }
